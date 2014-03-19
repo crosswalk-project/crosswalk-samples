@@ -1,0 +1,10 @@
+{
+  "name": "WebGL Sample",
+  "manifest_version": 1,
+  "version": "0.0.0.1",
+  "app": {
+    "launch":{
+      "local_path": "index.html"
+    }
+  }
+}

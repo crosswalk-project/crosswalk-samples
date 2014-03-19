@@ -1,0 +1,62 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(bottom, #e76840 0%, #f49541 65%, #ed7332 100%);
+    background: linear-gradient(to top, #e76840 0%, #f49541 65%, #ed7332 100%); 
+    min-width: 408px;
+}
+
+#sunburst.background {
+    background: -webkit-radial-gradient(50% 115%,  circle, white 0%, white 9%, rgba(252, 217, 89, 0.8) 17%, rgba(246, 137, 55, 0) 45%);
+    background: radial-gradient(  circle at 50% 115%, white 0%, white 9%, rgba(252, 217, 89, 0.8) 17%, rgba(246, 137, 55, 0) 45%); 
+}
+
+#small-circle.background {
+    background: -webkit-radial-gradient(50% 115%,  circle, rgba(250, 196, 72, 0.12) 0%, rgba(250, 196, 72, 0.12) 40%, transparent 40%);
+    background: radial-gradient(  circle at 50% 115%, rgba(250, 196, 72, 0.12) 0%, rgba(250, 196, 72, 0.12) 40%, transparent 40%); 
+}
+
+#big-circle.background {
+    background: -webkit-radial-gradient(40% 115%,  farthest-side circle, rgba(222, 97, 62, 0.2) 0%, rgba(222, 97, 62, 0.3) 90%, transparent 90%);
+    background: radial-gradient( farthest-side circle at 40% 115%, rgba(222, 97, 62, 0.2) 0%, rgba(222, 97, 62, 0.3) 90%, transparent 90%); 
+}
+ 
+.tile-overlay {
+  background: url(textures/bg-tile.png);
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+    text-align: center; 
+}
+
+canvas {
+    z-index: 10;
+    position: relative;
+}
+
+#logo {
+    position: fixed;
+    bottom: 0%;
+    padding-top: 5em;
+    display: inline-block;
+    background-image: url(textures/crosswalk-LOGO-lrg.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 477px auto;
+    height: 51px;
+    width: 100%;
+    margin-bottom: 36px; 
+}
+
+@media (max-width: 520px) {
+    #logo {
+        background-size: 400px auto;
+        height: 42.7673 px; 
+    }
+}
