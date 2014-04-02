@@ -1,3 +1,8 @@
+/*
+Copyright (c) 2014 Intel Corporation. All rights reserved.
+Use of this source code is governed by a MIT-style license that can be
+found in the LICENSE file.
+*/
 self.addEventListener ("message", computeFrame, false);
 
 var max_iterations;
@@ -9,7 +14,7 @@ function computeFrame (e) {
   if (typeof e.data.terminate !== "undefined") {
     self.close ();
     return;
-  } 
+  }
   var message = e.data.message;
   max_iterations = message.max_iterations;
   image_buffer = new Uint8ClampedArray (e.data.buffer);
@@ -96,7 +101,7 @@ function drawMandelbrot (params) {
   var y0 = yc - scale;
   var xd = (3.0*scale)/width;
   var yd = (2.0*scale)/height;
-  
+
   var xf = x0;
   for (var x = 0; x < width; ++x) {
     var yf = y0;
