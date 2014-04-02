@@ -1,3 +1,7 @@
+body {
+  margin-left: 0;
+}
+
 .center {
   margin: 0px auto;
 }
@@ -8,6 +12,7 @@
 
 .main {
   width: 600px;
+  -webkit-transform-origin: 0 0;
 }
 
 .fps {

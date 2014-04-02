@@ -12,7 +12,7 @@ var logger = {
   msg: function (msg) {
     console.log (msg);
   }
-}    
+}
 
 // Basic canvas operations
 var canvas = function () {
@@ -148,7 +148,7 @@ var mandelbrotWorkers = function () {
 
   function terminateLastWorker() {
     var mw = mWorkers [mWorkerCount-1];
-    mw.wworker.postMessage({terminate:true});    
+    mw.wworker.postMessage({terminate:true});
     mWorkerCount--;
   }
 
@@ -268,7 +268,7 @@ function animateMandelbrot () {
       pending_frames.push ({worker_index: worker_index, frame_index: request_count});
       return;
     }
-    
+
     var buffer = new Uint8ClampedArray (e.data.buffer);
     logger.msg ("Painting frame - no delay: " + frame_count);
     paintFrame (buffer);
@@ -372,7 +372,23 @@ function simd() {
   }
 }
 
+function scale () {
+  // scale main panel to width of window
+  var main_panel = $('.main');
+  var main_panel_width = main_panel.width ()
+  var client_width = document.documentElement.clientWidth;
+
+  if (main_panel_width > client_width) {
+    var scale = client_width / main_panel_width;
+    main_panel.css ('-webkit-transform', 'scale(' + scale + ')');
+  }
+}
+
 function main () {
+  if (screen.hasOwnProperty ('lockOrientation')) {
+    screen.lockOrientation ('landscape-primary');
+  }
+
   logger.msg ("main()");
   canvas.init ("#mandel");
   canvas.clear ();
@@ -387,6 +403,10 @@ function main () {
   }
   $("#ww_add").click (ww_add);
   $("#ww_sub").click (ww_sub);
+
+  window.addEventListener('resize', scale);
+  scale ();
+
   //animateMandelbrot ();
 }
 
