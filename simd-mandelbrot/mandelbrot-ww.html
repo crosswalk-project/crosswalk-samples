@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SIMD Demo: Mandelbrot Animation</title>
+<link href="mandelbrot.css" rel="Stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript" src="mandelbrot-ww.js"></script>
+</head>
+<body>
+<div class="center w600" style="position:relative">
+    <div class="elem-center">
+    <button id="start" type="button" class="btn btn-primary btn-large">Start</button>
+    <button id="stop" type="button" class="btn btn-primary btn-large">Stop</button>
+    <button id="simd" type="button" class="btn btn-primary btn-large">Turn On SIMD</button>
+    <button id="ww_add" type="button" class="btn btn-primary btn-large btn-narrow">+WW</button>
+    <button id="ww_sub" type="button" class="btn btn-primary btn-large btn-narrow">-WW</button>
+    </div>
+    <br />
+    <div class="elem-center"><canvas id="mandel" width="600" height="400"></canvas><div class="author">Peter Jensen, Intel Corporation</div></div>
+    <div class="elem-center fps">FPS: <span id="fps">0.0</span></div>
+    <div class="elem-center simd">SIMD:<span id="info">Off</span> WW:<span id="ww_count">1</span></div>
+    <br />
+</div>
+</body>
+</html>
