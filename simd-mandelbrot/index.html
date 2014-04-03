@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014 Intel Corporation. All rights reserved.
+Use of this source code is governed by a MIT-style license that can be
+found in the LICENSE file.
+-->
+<html>
+<head>
+<title>SIMD Demo: Mandelbrot Animation</title>
+<meta name="viewport" content="width=device-width">
+<link href="mandelbrot.css" rel="stylesheet">
+<script src="jquery-1.8.3.js"></script>
+<script src="mandelbrot-ww.js"></script>
+</head>
+<body>
+<div class="center main" style="position:relative">
+  <div class="elem-center">
+    <button id="start" type="button" class="btn">Start</button>
+    <button id="stop" type="button" class="btn">Stop</button>
+    <button id="simd" type="button" class="btn">Turn On SIMD</button>
+    <button id="ww_add" type="button" class="btn btn-narrow">+WW</button>
+    <button id="ww_sub" type="button" class="btn btn-narrow">-WW</button>
+  </div>
+  <br />
+  <div class="elem-center">
+    <canvas id="mandel" width="600" height="400"></canvas>
+    <div class="author">Peter Jensen, Intel Corporation</div>
+  </div>
+  <div class="elem-center fps">
+    FPS: <span id="fps">0.0</span>
+  </div>
+  <div class="elem-center simd">
+    SIMD:<span id="info">Off</span> WW:<span id="ww_count">1</span>
+  </div>
+</div>
+</body>
+</html>
