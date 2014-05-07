@@ -1,0 +1,12 @@
+{
+  "name": "xwalk_player",
+  "version": "0.0.0.1",
+  "app": {
+    "launch":{
+      "local_path": "index.html"
+    }
+  },
+  "icons": {
+    "96": "icon.png"
+  }
+}
