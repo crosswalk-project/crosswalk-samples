@@ -3,9 +3,11 @@
 Source code to accompany the Crosswalk Android extensions tutorial
 
 *   xwalk-audiofs-extension-src/
+   
     source for the xwalk-audiofs-extension Crosswalk extension for Android
 
 *   xwalk-player/
+
     simple HTML5 audio player which uses xwalk-audiofs-extension
 
 # Licences
