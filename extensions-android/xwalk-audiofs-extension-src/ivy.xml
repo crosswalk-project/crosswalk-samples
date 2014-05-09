@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.3">
+  <info organisation="org.crosswalk.sample" module="xwalk-audiofs-extension" />
+  <dependencies>
+    <dependency org="com.google.code.gson" name="gson" rev="2.2.4" conf="default->master" />
+    <dependency org="com.google.android" name="android" rev="4.0.1.2" conf="default->master" />
+  </dependencies>
+</ivy-module>
