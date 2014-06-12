@@ -59,7 +59,8 @@
   <!-- compile the extension Java code -->
   <target name="compile" depends="download-deps, download-crosswalk">
     <javac srcdir="${src}" destdir="${build}"
-           encoding="utf-8" debug="true" verbose="true">
+           encoding="utf-8" debug="true" verbose="true"
+           source="1.6" target="1.6">
       <classpath>
         <fileset dir="${lib}" includes="*.jar" />
         <file file="${lib}/crosswalk-${crosswalk-version}/libs/xwalk_app_runtime_java.jar" />
