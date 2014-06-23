@@ -2,12 +2,23 @@
  * Use of this source code is governed by an Apache v2 license that can be
  * found in the LICENSE-APACHE-V2 file. */
 
-// returns an array of file objects on the device in format:
-// [{title: ..., artist: ..., path: ...}, ...]
-// the path property is a playable URI if inserted into an <audio> element
-// as the src attribute
+/*
+AudioFs extension
 
-// provides a unique ID for each call to the extension
+exports listFiles() and listFilesAsync(),
+which return or resolve to (respectively) a response object:
+
+   {
+     id: "<call id>",
+     success: true | false,
+     files: []
+   }
+
+files is an array of file objects on the device in format:
+[{title: ..., artist: ..., path: ...}, ...]
+*/
+
+// provides a unique ID for each async call to the extension
 var counter = 0;
 
 // map from a request ID to a callback for the response
@@ -28,9 +39,12 @@ extension.setMessageListener(function (message) {
 // returns a promise which resolves to an array of file objects, or
 // rejects with an error if the call to the extension fails
 exports.listFilesAsync = function () {
+  // counter contains a unique request ID for this invocation
   counter += 1;
 
   return new Promise(function (resolve, reject) {
+    // associate the request ID with the method which will be invoked
+    // if the request is successful
     successCbs[counter] = resolve;
 
     // you MUST pass a string to postMessage()
@@ -45,6 +59,7 @@ exports.listFilesAsync = function () {
 
 // returns an array of file objects
 exports.listFiles = function () {
+  // you MUST pass a string to sendSyncMessage(), even if it's empty
   var result = extension.internal.sendSyncMessage('');
   return JSON.parse(result);
 };
