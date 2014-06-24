@@ -1,0 +1,5 @@
+{
+  "name":  "echo",
+  "class": "org.crosswalkproject.sample.Echo",
+  "jsapi": "xwalk-echo-extension.js"
+}

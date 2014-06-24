@@ -3,14 +3,10 @@
 # directory containing this script
 PROJECT_DIR=$(cd $(dirname $0) ; pwd)
 
-EXTENSION_SRC=$PROJECT_DIR/xwalk-audiofs-extension-src
-APP_SRC=$PROJECT_DIR/xwalk-player
+EXTENSION_SRC=$PROJECT_DIR/xwalk-echo-extension-src
+APP_SRC=$PROJECT_DIR/xwalk-echo-app
 
 # get Ivy
-if [ ! -d $EXTENSION_SRC/tools ] ; then
-  mkdir $EXTENSION_SRC/tools
-fi
-
 if [ ! -f $EXTENSION_SRC/tools/ivy-2.4.0-rc1.jar ] ; then
   echo
   echo "********* DOWNLOADING IVY..."
@@ -36,7 +32,7 @@ XWALK_DIR=$EXTENSION_SRC/lib/`ls lib/ | grep 'crosswalk-'`
 echo
 echo "********* BUILDING ANDROID APK FILES..."
 cd $XWALK_DIR
-python make_apk.py --enable-remote-debugging --manifest=$APP_SRC/manifest.json --extensions=$EXTENSION_SRC/xwalk-audiofs-extension/
+python make_apk.py --fullscreen --enable-remote-debugging --manifest=$APP_SRC/manifest.json --extensions=$EXTENSION_SRC/xwalk-echo-extension/
 
 # back to where we started
 cd $PROJECT_DIR
@@ -44,7 +40,7 @@ cd $PROJECT_DIR
 # show the location of the output apk files
 echo
 echo "********* APK FILES GENERATED:"
-APKS=`ls $XWALK_DIR/xwalk_player*.apk`
+APKS=`ls $XWALK_DIR/xwalk_echo_app*.apk`
 for apk in $APKS ; do
   echo $apk
 done

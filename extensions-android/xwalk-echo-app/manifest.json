@@ -1,5 +1,5 @@
 {
-  "name": "xwalk_player",
+  "name": "xwalk_echo_app",
   "version": "0.0.0.1",
   "app": {
     "launch":{

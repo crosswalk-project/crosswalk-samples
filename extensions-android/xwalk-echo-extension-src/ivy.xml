@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.3">
+  <info organisation="org.crosswalkproject.sample" module="xwalk-echo-extension" />
+  <dependencies>
+    <dependency org="com.google.code.gson"
+                name="gson"
+                rev="2.2.4"
+                conf="default->master" />
+  </dependencies>
+</ivy-module>
