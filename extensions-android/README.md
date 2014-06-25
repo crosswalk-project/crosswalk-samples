@@ -1,12 +1,14 @@
 # Introduction
 
-Source code to accompany the Crosswalk Android extensions tutorial
+Source code to accompany the Crosswalk Android extensions tutorial:
 
-xwalk-audiofs-extension-src/:
-  source for the xwalk-audiofs-extension Crosswalk extension for Android
+*   `xwalk-echo-extension-src/`
 
-xwalk-player/:
-  simple HTML5 audio player which uses xwalk-audiofs-extension
+    Source for the xwalk-echo-extension Crosswalk extension for Android.
+
+*   `xwalk-echo-app/`
+
+    Simple HTML5 app which uses xwalk-echo-extension.
 
 # Pre-requisites
 
@@ -28,8 +30,8 @@ be included in the distribution).
 Android.
 *   Package the application with the extension.
 
-The `build.sh` file will perform these steps for you.
-It needs to be executable, e.g. on Linux:
+The `build.sh` file will perform these steps for you. It needs to be
+executable, e.g. on Linux:
 
     chmod +x build.sh
 
