@@ -3,14 +3,12 @@
  * found in the LICENSE-APACHE-V2 file. */
 package org.crosswalkproject.sample;
 
-public class FileInfo {
-  public String uri;
-  public String title;
-  public String artist;
+public class Message {
+  public String id;
+  public String content;
 
-  public FileInfo(String path, String title, String artist) {
-    this.uri = path;
-    this.title = title;
-    this.artist = artist;
+  public Message(String id, String content) {
+    this.id = id;
+    this.content = content;
   }
 }

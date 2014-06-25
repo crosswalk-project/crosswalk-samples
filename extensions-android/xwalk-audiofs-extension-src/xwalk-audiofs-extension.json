@@ -1,5 +1,0 @@
-{
-  "name":  "audioFs",
-  "class": "org.crosswalkproject.sample.AudioFs",
-  "jsapi": "xwalk-audiofs-extension.js"
-}

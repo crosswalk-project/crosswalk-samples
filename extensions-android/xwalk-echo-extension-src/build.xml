@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="xwalk-audiofs-extension" default="dist">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="xwalk-echo-extension" default="dist">
   <!-- Java source -->
   <property name="src" value="java" />
 
@@ -7,7 +7,7 @@
   <property name="lib" value="lib" />
 
   <!-- Crosswalk Android version -->
-  <property name="crosswalk-version" value="4.32.76.6" />
+  <property name="crosswalk-version" value="5.34.104.5" />
 
   <!-- location of downloaded Crosswalk Android file -->
   <property name="crosswalk-zip" value="${lib}/crosswalk.zip" />
@@ -16,7 +16,7 @@
   <property name="build" value="build" />
 
   <!-- final location for the built extension -->
-  <property name="dist" value="xwalk-audiofs-extension" />
+  <property name="dist" value="xwalk-echo-extension" />
 
   <!-- classpath containing the Ivy Ant tasks jar file -->
   <path id="ivy.lib.path">
@@ -50,7 +50,7 @@
   <target name="download-crosswalk" depends="prepare, check-crosswalk-present"
           unless="crosswalk-zip.present">
     <!-- fetch from the download site -->
-    <get src="https://download.01.org/crosswalk/releases/crosswalk/android/stable/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />
+    <get src="https://download.01.org/crosswalk/releases/crosswalk/android/beta/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />
 
     <!-- unpack to lib/crosswalk-*/ -->
     <unzip src="${crosswalk-zip}" dest="${lib}" />
@@ -59,8 +59,7 @@
   <!-- compile the extension Java code -->
   <target name="compile" depends="download-deps, download-crosswalk">
     <javac srcdir="${src}" destdir="${build}"
-           encoding="utf-8" debug="true" verbose="true"
-           source="1.6" target="1.6">
+           encoding="utf-8" debug="true" verbose="true">
       <classpath>
         <fileset dir="${lib}" includes="*.jar" />
         <file file="${lib}/crosswalk-${crosswalk-version}/libs/xwalk_app_runtime_java.jar" />
@@ -70,7 +69,7 @@
 
   <!--
   pack third party Java code and extension code into a single
-  jar, and copy supporting files to the xwalk-audiofs-extension/
+  jar, and copy supporting files to the xwalk-echo-extension/
   directory; NB we don't need to pack any Crosswalk jars, as they
   will be added by the packaging tool; and we don't need android.jar,
   as that is on the Android target already
@@ -79,15 +78,14 @@
     <unjar dest="${build}">
       <fileset dir="${lib}">
         <include name="*.jar" />
-        <exclude name="android*.jar" />
       </fileset>
     </unjar>
 
-    <jar destfile="${dist}/xwalk-audiofs-extension.jar">
+    <jar destfile="${dist}/xwalk-echo-extension.jar">
       <fileset dir="${build}" excludes="META-INF/**" />
     </jar>
 
-    <copy file="xwalk-audiofs-extension.json" todir="${dist}" />
-    <copy file="js/xwalk-audiofs-extension.js" todir="${dist}" />
+    <copy file="xwalk-echo-extension.json" todir="${dist}" />
+    <copy file="js/xwalk-echo-extension.js" todir="${dist}" />
   </target>
 </project>
