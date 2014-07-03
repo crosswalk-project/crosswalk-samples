@@ -5,3 +5,4 @@ extensions-android/xwalk-echo-extension-src/build
 extensions-android/xwalk-echo-extension-src/lib
 extensions-android/xwalk-echo-extension-src/tools
 extensions-android/xwalk-echo-extension-src/xwalk-echo-extension
+webrtc/server/node_modules
