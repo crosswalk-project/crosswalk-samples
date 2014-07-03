@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         function (err) {
-          logError('Failed to get local stream');
+          logError('failed to access local camera');
           logError(err.message);
         }
       );
@@ -99,15 +99,27 @@ document.addEventListener('DOMContentLoaded', function () {
       // create connection to the ID server
       peer = new Peer(callerId, {host: SERVER_IP, port: SERVER_PORT});
 
-      // get local stream ready for incoming calls
-      getLocalStream();
+      // hack to get around the fact that if a server connection cannot
+      // be established, the peer and its socket property both still have
+      // open === true; instead, listen to the wrapped WebSocket
+      // and show an error if its readyState becomes CLOSED
+      peer.socket._socket.onclose = function () {
+        logError('no connection to server');
+        peer = null;
+      };
+
+      // get local stream ready for incoming calls once the wrapped
+      // WebSocket is open
+      peer.socket._socket.onopen = function () {
+        getLocalStream();
+      };
 
       // handle events representing incoming calls
       peer.on('call', answer);
     }
     catch (e) {
       peer = null;
-      logError('could not reach connection server');
+      logError('error while connecting to server');
     }
   };
 
@@ -119,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (!localStream) {
-      logError('could not start call as there is no localStream ready');
+      logError('could not start call as there is no local camera');
       return
     }
 
