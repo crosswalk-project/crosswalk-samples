@@ -5,25 +5,24 @@ connections), built using peerjs (http://peerjs.com/).
 
 ## Pre-requisites
 
-nodejs, bower, npm
+nodejs, npm
 
 ## "Build"
 
     cd server
     npm install
-    cd ../client
-    bower install
 
 ## Running
 
     # start the server
-    cd server
     ./run.sh
 
-    # this displays the IP address of the WebRTC brokering server
+    # this displays the IP address of the WebRTC brokering server;
+    # to keep the application simple, this is hard-coded into
+    # the clients
 
     # edit client/app/js/main.js:
-    # you need to set the hostIp at the top of the file to
+    # you need to set the SERVER_IP at the top of the file to
     # the IP address of your server;
     # the clients you are installing on will need to be able
     # to access that IP
@@ -33,7 +32,7 @@ nodejs, bower, npm
 
     # or package for Crosswalk (7+)
     python make_apk.py --app-root=client/app --app-local-path=index.html --name=WebRTC --package=org.crosswalkproject.samples.webrtc
-    # and install on a target
+    # then install on an Android target
 
 You can use two browser tabs if you like, or a mix of Crosswalk apps
 on devices + browsers.
@@ -48,10 +47,18 @@ the client instances.)
 
 ## Licenses
 
-This application uses peerjs (both the client and server libraries),
+This application uses **peerjs** (both the client and server libraries),
 released under an MIT license:
 
 *   Client: https://github.com/peers/peerjs
 *   Server: https://github.com/peers/peerjs-server
 
-See LICENSE-MIT-PEERJS.txt for the full license.
+See LICENSE-MIT-PEERJS.txt for the full license. Note that only the
+peerjs client library is distributed with this project.
+
+The server part also uses the nodejs **ip** library, released under an
+MIT license:
+
+*   ip: https://github.com/indutny/node-ip
+
+See LICENSE-MIT-IP.txt for the full license.
