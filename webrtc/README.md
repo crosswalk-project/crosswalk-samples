@@ -21,17 +21,17 @@ nodejs, npm
     # to keep the application simple, this is hard-coded into
     # the clients
 
-    # edit client/app/js/main.js:
+    # edit client/main.js:
     # you need to set the SERVER_IP at the top of the file to
     # the IP address of your server;
     # the clients you are installing on will need to be able
     # to access that IP
 
-    # open client/app/index.html in a browser which supports
+    # open client/index.html in a browser which supports
     # WebRTC (recent Chrome or Firefox)
 
     # or package for Crosswalk (7+)
-    python make_apk.py --app-root=client/app --app-local-path=index.html --name=WebRTC --package=org.crosswalkproject.samples.webrtc
+    python make_apk.py --app-root=client/ --app-local-path=index.html --name=WebRTC --package=org.crosswalkproject.samples.webrtc
     # then install on an Android target
 
 You can use two browser tabs if you like, or a mix of Crosswalk apps
