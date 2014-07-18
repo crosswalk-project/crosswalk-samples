@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>space dodge game</title>
+    <link rel="stylesheet" href="base.css">
+  </head>
+
+  <body>
+
+    <div id="container">
+
+      <div id="game-screen">
+        <div id="controls" class="vbox">
+          <p id="score">Score<br><span id="score-display"></span></p>
+          <img id="control-up" src="control-up.png">
+          <img id="control-down" src="control-down.png">
+        </div>
+
+        <div id="play-area-container">
+          <canvas id="play-area" width="600" height="450"></canvas>
+        </div>
+      </div>
+
+      <div id="finish-screen" class="vbox" data-visible="false">
+        <p id="final-score"></p>
+        <button id="restart">Restart</button>
+      </div>
+
+    </div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>

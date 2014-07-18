@@ -1,0 +1,14 @@
+{
+  "name": "space_dodge_game",
+  "version": "0.0.0.1",
+  "start_url": "index.html",
+  "orientation": "landscape",
+  "display": "fullscreen",
+  "xwalk_launch_screen": {
+    "ready_when": "custom",
+    "landscape": {
+      "background_color": "#11f",
+      "image": "fg.png"
+   }
+  }
+}
