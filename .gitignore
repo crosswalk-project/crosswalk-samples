@@ -3,5 +3,7 @@ extensions-android/apache-ivy*
 extensions-android/xwalk-echo-extension-src/.ant-targets-build.xml
 extensions-android/xwalk-echo-extension-src/build
 extensions-android/xwalk-echo-extension-src/lib
+extensions-android/xwalk-echo-extension-src/tools/apache-ivy*
+extensions-android/xwalk-echo-extension-src/tools/ivy*.jar
 extensions-android/xwalk-echo-extension-src/xwalk-echo-extension
 webrtc/server/node_modules
