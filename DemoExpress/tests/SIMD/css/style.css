@@ -1,0 +1,89 @@
+.center {
+  margin: 0px auto;
+}
+
+.elem-center {
+  text-align: center;
+}
+
+.w600 {
+  width: 600px;
+}
+
+.fps {
+  position:absolute;
+  top:380px;
+  color:white;
+  font-weight:bold;
+  font-size:40pt;
+  width:600px;
+}
+
+.simd {
+  position:absolute;
+  top:80px;
+  color:white;
+  font-weight:bold;
+  font-size:40pt;
+  width: 600px;
+}
+
+.author {
+  font-size:6pt;
+  position:absolute;
+  bottom:10px;
+  right:0;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+.btn-large {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn {
+  width: 145px;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  -webkit-user-select: none;
+}
+
+.btn-narrow {
+  width: 70px;
+}
+
+.btn-disable,.btn-disable:hover,.btn-disable:active,.btn-disable:focus
+{
+  background-color: #808080;
+  border-color: #808080;
+}
+
+button {
+  -webkit-appearance: button;
+  font: -webkit-small-control;
+  font-family: inherit;
+}
+
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

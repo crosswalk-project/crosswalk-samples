@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Xu, Kang <kangx.xu@intel.com>
+
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+<link rel="stylesheet" type="text/css" href="../../css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="../../js/jquery/jquery.js"></script>
+<script src="../../js/jquery/jquery.mobile.js"></script>
+<script src="../../js/tests.js"></script>
+<script src="js/main.js"></script>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table,td,th {
+        border : 1px solid black;
+    }
+
+    td,th {
+        width: 32%;
+    }
+</style>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role="content">
+        <h4>This sample demonstrates the contacts manager can create, edit, query user's contacts.</h4>
+        <ul data-role="listview">
+            <li data-role="list-divider">Contacts Save</li>
+            <li>Family Name:<input id="familyName" type="text" value="David"></input></li>
+            <li>Given Name:<input id="givenName" type="text" value="Beckham"></input></li>
+            <li>Phone Number:<input id="number" type="text" value="13913976543"></input></li>
+            <li>
+                <div id="save" data-role="button">Save</div>
+            </li>
+        </ul>
+        <ul data-role="listview">
+            <li data-role="list-divider">Contacts Query</li>
+            <li>Family Name:<input id="queryName" type="text"></input></li>
+            <li>
+                <div id="query" data-role="button">Query</div>
+            </li>
+        </ul>
+        <ul data-role="listview" id="summary">
+            <li data-role="list-divider">Contacts Clear</li>
+            <li>
+                <div id="clear" data-role="button">Clear</div>
+            </li>
+        </ul>
+        <ul data-role="listview">
+            <li data-role="list-divider">Contacts List</li>
+            <li><table id="tableList"></table></li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+    </div>
+    <div data-role="popup" id="popup_info">
+        <font style="font-size:85%">
+            <p>This sample is designed by the save, find, clear method of ContactsManager interface</p>
+        </font>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Li, Hao <haox.li@intel.com>
+        Zhang, Jing <jingx.zhang@intel.com>
+
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/jquery/jquery.mobile.js"></script>
+    <script src="../../js/tests.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role="content">
+      <h4>This sample demonstrates the Typed Array are created with default value 0, and set to 1</h4>
+      <div class="viewDiv">
+        <table id="array0" cellspacing="0" cellpadding="0">
+          <tbody><tr>
+            <td>float64</td><td>float64</td><td>float32</td><td>float32</td>
+          </tr></tbody>
+          <tbody><tr>
+            <td>uint32</td><td>uint32</td><td>int32</td><td>int32</td>
+          </tr></tbody>
+          <tbody><tr>
+            <td>uint16</td><td>uint16</td><td>int16</td><td>int16</td>
+          </tr></tbody>
+          <tbody><tr>
+            <td>uint8</td><td>uint8</td><td>int8</td><td>int8</td>
+          </tr></tbody>
+        </table>
+        <center><p>Each cell value maps the array type in table above.</p></center>
+        <table id="array1" cellspacing="0" cellpadding="0">
+        </table>
+      </div>
+      <div id="buttondiv">
+        <a href="#" id="setValue" data-role="button">Set & Get Value</a>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    </div>
+    <div data-role="popup" id="popup_info">
+      <font class="fontSize">
+          <p>It is designed by Typed Array API, including ArrayBuffer, Float64Array, Float32Array, Uint32Array, Int32Array, Uint16Array, Int16Array, Uint8Array, Int8Array interfaces.</p>
+      </font>
+    </div>
+  </body>
+</html>

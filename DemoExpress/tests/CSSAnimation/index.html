@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Li, Hao <haox.li@intel.com>
+
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/jquery/jquery.mobile.js"></script>
+    <script src="../../js/tests.js"></script>
+    <script src="js/transition-test-helpers.js"></script>
+    <script>
+        var test_box;
+        var box_txt = "1";
+        function init() {
+            test_box = document.getElementById("testBox");
+            test_box.addEventListener("webkitAnimationIteration", start_f, true);
+            test_box.addEventListener("animationiteration", start_f, true);
+        }
+        function start_f() {
+            try {
+                box_txt = test_box.innerText;
+                test_box.innerText = parseInt(box_txt) + 1;
+                if (test_box.innerText % 2 == 0)
+                    $("#testBox").removeClass("final");
+                else
+                    $("#testBox").addClass("final");
+            } catch (err) {
+                test_box.innerText = box_txt;
+            }
+        }
+
+        function reloadTest() {
+            document.location.reload();
+        }
+
+        const expectedValues = [
+          // [time, element-id, property, expected-value, tolerance]
+          // [0.25, 'box', 'border-top-left-radius', 25, 5],
+          [0.25, 'testBox', 'border-radius', 25, 500]
+        ];
+
+        const expectedValues2 = [
+            [0.5, 'box', 'border-top-color', [128, 0, 128], 300],
+            [0.5, 'box', 'border-right-color', [128, 0, 128], 300],
+            [0.5, 'box', 'border-bottom-color', [128, 0, 128], 300],
+            [0.5, 'box', 'border-left-color', [128, 0, 128], 300],
+            [0.5, 'box', 'border-top-width', 10, 200],
+            [0.5, 'box', 'border-right-width', 10, 200],
+            [0.5, 'box', 'border-bottom-width', 10, 200],
+            [0.5, 'box', 'border-left-width', 10, 200]
+        ];
+        function setupTest() {
+            document.getElementById('testBox').className = 'testBox final';
+        }
+        function setupTest2() {
+            var box = document.getElementById('box');
+            box.className = 'final';
+        }
+        runTransitionTest(expectedValues, setupTest, usePauseAPI);
+        runTransitionTest(expectedValues2, setupTest2, usePauseAPI);
+    </script>
+  </head>
+  <body onload="init()">
+    <div data-role="header">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role="content">
+      <h4>This sample demonstrates a CSS animation with three effects: transferring between square and circle, changing in the order of red, green and blue, and showing a counter from 1 to 10.</h4>
+      <div class="display_box">
+        <div id="box">
+          <div id="testBox">1</div>
+        </div>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    </div>
+    <div data-role="popup" id="popup_info">
+      <font class="fontSize">
+        <p>The CSS animation is drew by properties: transition-duration, transition-timing-function, animation-name, animation-duration, animation-timing-function, animation-delay, animation-play-state, animation-iteration-count, animation-direction.</p>
+      </font>
+    </div>
+  </body>
+</html>

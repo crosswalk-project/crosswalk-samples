@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Cui, Jieqiong <jieqiongx.cui@intel.com>
+
+-->
+
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css">
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="../../js/jquery/jquery.js"></script>
+<script src="../../js/jquery/jquery.mobile.js"></script>
+<script src="../../js/tests.js"></script>
+
+<div data-role="header">
+  <h1 id="main_page_title"></h1>
+</div>
+
+<div data-role="content">
+  <h4>This sample demonstrates the sandbox of iframe can be set to 'allow-scripts', 'allow-forms' and 'allow-same-origin'.</h4>
+  <ol>
+    <li>
+      <p>There is a filled green square and no red in the frame below.</p>
+      <iframe src="res/sandbox-allow-scripts.html" sandbox="allow-scripts" height="120" width="220"></iframe>
+    </li>
+    <li>
+      <p>There are an input form with text "Filler Text" and a button "Submit" in the frame below, and there is green text "Filler Text" after click the button.</p>
+      <iframe src="res/sandbox-allow-forms.html" sandbox="allow-forms" height="100" width="220"></iframe>
+    </li>
+    <li>
+      <p>There is text "Filler Text" below.</p>
+      <div id="same"></div>
+      <iframe id='sandboxIframe' src="res/sandbox-allow-same-origin.html" sandbox="allow-same-origin" onload="callback()" style="display: none" ></iframe>
+    </li>
+  </ol>
+  <script>
+    function callback() {
+      document.getElementById('same').innerHTML = document.getElementById('sandboxIframe').contentWindow.document.body.innerHTML;
+    }
+  </script>
+</div>
+
+<div data-role="footer" data-position="fixed">
+</div>
+
+<div data-role="popup" id="popup_info">
+  <font class="fontSize">
+    <p>This sample is designed by the sandbox attribute of iframe.</p>
+  </font>
+</div>
+

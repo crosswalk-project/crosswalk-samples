@@ -1,0 +1,10 @@
+Copyright (c) 2013 Intel Corporation.
+Except as noted, this software is licensed under BSD-3-Clause License.
+Please, see the LICENSE.BSD-3 file for the BSD-3-Clause License.
+
+Following resources are licensed under its own license.
+
+CanvasTest.ttf:
+from https://github.com/w3c/web-platform-tests/blob/master/fonts/CanvasTest.ttf
+covered by the dual-licensing approach described in:
+http://www.w3.org/Consortium/Legal/2008/04-testsuite-copyright.html

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Xu, Kang <kangx.xu@intel.com>
+
+-->
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+<link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+<script src="../../js/jquery/jquery.js"></script>
+<script src="../../js/jquery/jquery.mobile.js"></script>
+<script src="../../js/tests.js"></script>
+<script src="js/main.js"></script>
+<style>
+    #view {
+        border: 1px solid black;
+        margin: 15px;
+        height: 66px;
+        text-align: center;
+    }
+    #test {
+      padding: 10px;
+      margin: 5px auto;
+    }
+</style>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1 id="main_page_title"></h1>
+    </div>
+    <div id="content" data-role="content">
+        <h4>This sample demonstrates the CSS3 media features for adapting the same content to different output devices and screens.</h4>
+        <div id="view">
+            <div id="media">This content display in right color if test device satisfy the CSS3 Media Queries.</div>
+        </div>
+        <div id="test">
+          <p >The content can be set to green color if the device aspect ratio is less than or equal to 1/2</p>
+          <div id="apply1" data-role="button">Set green</div>
+          <p>The content can be set to red color if the device aspect ratio is more than or equal to 1/10</p>
+          <div id="apply2" data-role="button">Set red</div>
+          <p>The content can be set to blue color if the device height is less than or equal to 1300px</p>
+          <div id="apply3" data-role="button">Set blue</div>
+          <p>The content can be set to yellow color if the device height is more than or equal to 100px</p>
+          <div id="apply4" data-role="button">Set yellow</div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+    </div>
+    <div data-role="popup" id="popup_info">
+         <font style="font-size:85%">
+            <p>It is designed by device-aspect-ratio and device-height properties of CSS @media</p>
+        </font>
+    </div>
+</div>
+</body>
+</html>

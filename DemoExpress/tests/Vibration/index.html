@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Lin, Wanming <wanmingx.lin@intel.com>
+
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+        <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script src="../../js/jquery/jquery.js"></script>
+        <script src="../../js/jquery/jquery.mobile.js"></script>
+        <script src="../../js/tests.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery/slider.tooltip.js"></script>
+        <style>
+            .vibration {
+                text-align: left
+            }
+        </style>
+    </head>
+    <body>
+        <div data-role="header">
+          <h1 id="main_page_title"></h1>
+        </div>
+        <div data-role="content" class="content">
+            <h4>This sample demonstrates the Vibration is able to adjust vibration time from 500ms to 3000ms, vibration period from 100ms to 2000ms, and vibration number from 1 to 20.</h4>
+          <div class="containing-element">
+            <label for="slider-1" class="vibration">Vibration Time(s)</label>
+            <input type="range" name="slider-1" id="slider-1" data-highlight="true" min="0.50" max="3" step="0.10" value="1" data-show-value="true" class="hideButton">
+            <label for="slider-1" class="vibration">Vibration Periods(s)</label>
+            <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="0.10" max="2" step="0.10" value="0.50" data-show-value="true" class="hideButton">
+            <label for="slider-1" class="vibration">Vibration Number</label>
+            <input type="range" name="slider-3" id="slider-3" data-highlight="true" min="1" max="20" value="2" data-show-value="true" class="hideButton">
+          </div>
+          <div data-role="controlgroup" data-type="horizontal" class="q">
+            <label for="slider-1" class="vibration">Vibration</label>
+            <a id="on" data-role="button">On</a>
+            <a id="off" data-role="button">Off</a>
+          </div> 
+        </div>
+        <div data-role="footer" data-position="fixed">
+        </div>
+        <div data-role="popup" id="popup_info">
+          <font class="fontSize">
+            <p>The Vibration feature: vibrate attribute.</p>
+          </font>
+        </div>
+    </body>
+</html>

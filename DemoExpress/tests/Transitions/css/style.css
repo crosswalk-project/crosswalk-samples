@@ -1,0 +1,89 @@
+/*
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Xu, Jianfeng <jianfengx.xu@intel.com>
+
+*/
+
+.trans_box {
+  padding: 20px;
+  background-color: #aa00aa;
+  *zoom:1;
+}
+.trans_list {
+  width: 10%;
+  height: 34px;
+  margin:10px 0;
+  background-color:#000000;
+  color:#fff;
+  text-align:center;
+  padding-top:15px;
+  font-size:24px;
+}
+.ease {
+  -webkit-transition: all 4s ease;
+  -moz-transition: all 4s ease;
+  -o-transition: all 4s ease;
+  transition: all 4s ease;
+}
+.ease_in {
+  -webkit-transition: all 4s ease-in;
+  -moz-transition: all 4s ease-in;
+  -o-transition: all 4s ease-in;
+  transition: all 4s ease-in;
+}
+.ease_out {
+  -webkit-transition: all 4s ease-out;
+  -moz-transition: all 4s ease-out;
+  -o-transition: all 4s ease-out;
+  transition: all 4s ease-out;
+}
+.ease_in_out {
+  -webkit-transition: all 4s ease-in-out;
+  -moz-transition: all 4s ease-in-out;
+  -o-transition: all 4s ease-in-out;
+  transition: all 4s ease-in-out;
+}
+.linear {
+  -webkit-transition: all 4s linear;
+  -moz-transition: all 4s linear;
+  -o-transition: all 4s linear;
+  transition: all 4s linear;
+}
+.trans_box:hover .trans_list, .trans_box_hover .trans_list {
+  margin-left:90%;
+  background-color:#ffffff;
+  color:#333;
+  -webkit-border-radius:25px;
+  -moz-border-radius:25px;
+  -o-border-radius:25px;
+  border-radius:25px;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}

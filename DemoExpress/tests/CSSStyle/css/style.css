@@ -1,0 +1,258 @@
+/*
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Cui, Jieqiong <jieqiongx.cui@intel.com>
+
+*/
+
+#d{
+    width: 100%;
+    height: 330px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+#text-div{
+    background: #fff;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 35px auto;
+    outline: #bed742 dotted 5px;
+    outline-offset: 5px;
+    width: 280px;
+    height: 230px;
+    opacity: 1;
+    overflow: auto;
+}
+h3{
+    font-family: TestFont, Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+}
+#p{
+    background: url("../../../res/images/white-1x1.png") 40%/10em repeat fixed border-box;
+    word-wrap: break-word;
+    font-size: 14px;
+    white-space: normal;
+    text-indent: 30px;
+}
+
+#p:first-letter {
+    position: relative;
+    font-size: 24px;
+    color: red;
+    color: rgb(255, 0, 0%);
+    color: rgb(100%, 0%, 0);
+    color: rgb(100%, 1, 0);
+    color: rgb(254, 255%, 0);
+}
+
+/* CSS font */
+@font-face {
+    font-family: TestFont;
+    font-style: normal;
+    font-weight: bolder;
+    src: url(../../../res/font/w3c/CanvasTest.ttf);
+}
+.text-font {
+    font-family: TestFont;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+/* CSS Multicolumn */
+.text-multi{
+    columns: 3;
+    column-rule: 10px groove orange;
+    column-gap: 2em;
+    -webkit-columns: 3;
+    -webkit-column-rule: 10px groove orange;
+    -webkit-column-gap: 2em;
+}
+.text-h{
+    column-span: all;
+    -webkit-column-span: all;
+}
+
+/* CSS Color */
+.text-red{
+    color: rgb(255   ,0		, 0);
+}
+.text-green{
+    color: rgb(0%, 100%, 0%);
+}
+.text-blue{
+    color: blue;
+    color: #f;
+    color: #ff00;
+    color: #ff000000;
+}
+
+/* CSS Text Align */
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+/* CSS Text Transform */
+.text-upper{
+    text-transform: uppercase;
+}
+.text-lower{
+    text-transform: lowercase;
+}
+
+/* CSS Text Shadow */
+.text-shadow1{
+    text-shadow: -3px -3px 0 rgba(106,90,205,0.5);
+}
+.text-shadow2{
+    text-shadow: 3px 3px 0 rgba(106,90,205,0.5);
+}
+
+/* CSS Box Shadow */
+.box-shadow1{
+    box-shadow: -15px -15px 10px hsla(150, 20%, 30%, 0.5);
+}
+.box-shadow2{
+    box-shadow: 15px 15px 10px hsla(150, 20%, 30%, 0.5);
+}
+
+/* CSS Border */
+.border1{
+    border-image: url(../../../res/images/orange-40x40.png) 10% 15% 10% 15% / 5px repeat stretch;
+    -webkit-border-image: url(../../../res/images/orange-40x40.png) 10% 15% 10% 15% / 5px repeat stretch;
+}
+.border2{
+    border: 5px groove rgb(135,206,235);
+    border-radius: 20px 20px;
+}
+
+/* CSS text-decoration */
+.decoration1{
+    text-decoration: underline;
+}
+.decoration2{
+    text-decoration: line-through;
+}
+.decoration3{
+    text-decoration: overline;
+}
+
+/* CSS break-word */
+.break1{
+    word-break: break-all;
+    text-align: justify;
+}
+.break2{
+    word-break: break-word;
+    text-align: justify;
+}
+
+/* CSS Transparency */
+.ui-slider .ui-btn-inner {
+    padding: 6px 0 0 0 !important;
+    font-size:.7em;
+}
+.ui-slider-popup {
+    position: absolute !important;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 36px;
+    padding-top: 14px;
+    z-index: 100;
+    opacity: 0.8;
+}
+
+.text-on{
+    background:#5393c5;
+}
+
+div.ui-slider {
+    margin: 0 2% 0 0px;
+    width:96%;
+}
+
+.content .ui-controlgroup-controls{
+    width: 100%;
+}
+
+.q{
+    margin-left: 2%;
+}
+
+.u{
+    margin-left: 2%;
+}
+
+.s{
+    margin-left: 2%;
+}
+ .q .ui-corner-right{
+
+}
+
+ .q .ui-corner-left{
+
+}
+
+.u .ui-corner-right{
+
+}
+
+.u .ui-corner-left{
+
+}
+
+.u .ui-btn-up-c{
+    width: 32%;
+}
+
+.u .ui-btn-down-c{
+    width: 32%;
+}
+
+.u .ui-btn-hover-c{
+    width: 32%
+}
+
+.q .ui-btn-up-c{
+    width: 48%;
+}
+
+.q .ui-btn-down-c{
+    width: 48%;
+}
+
+.q .ui-btn-hover-c{
+    width: 48%;
+}
+
+.u .ui-btn-inner, .q .ui-btn-inner{
+    padding: .6em 5px;
+    overflow: visible;
+}
