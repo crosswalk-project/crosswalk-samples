@@ -67,12 +67,16 @@ the code you intend to package (see above).
 When building the Crosswalk 6 versions, you will need to pass the
 `--fullscreen` option for the game to run in fullscreen, e.g.
 
-    python make_apk.py --fullscreen --manifest=Crosswalk-6-scale/manifest.json
+    python make_apk.py --fullscreen --manifest=Crosswalk-6-scale/manifest.json \
+      --package=org.crosswalkproject.sample
 
-    python make_apk.py --fullscreen --manifest=Crosswalk-6-resize/manifest.json
+    python make_apk.py --fullscreen --manifest=Crosswalk-6-resize/manifest.json \
+      --package=org.crosswalkproject.sample
 
 `--fullscreen` is not required for the Crosswalk 8 versions, e.g.
 
-    python make_apk.py --manifest=Crosswalk-8-scale/manifest.json
+    python make_apk.py --manifest=Crosswalk-8-scale/manifest.json \
+      --package=org.crosswalkproject.sample
 
-    python make_apk.py --manifest=Crosswalk-8-resize/manifest.json
+    python make_apk.py --manifest=Crosswalk-8-resize/manifest.json \
+      --package=org.crosswalkproject.sample
