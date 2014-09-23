@@ -1,10 +1,5 @@
 {
   "name": "SIMD",
-  "manifest_version": 1,
-  "version": "0.0.0.1",
-  "app": {
-    "launch":{
-      "local_path": "index.html"
-    }
-  }
+  "xwalk_version": "0.0.0.1",
+  "start_url": "index.html"
 }
