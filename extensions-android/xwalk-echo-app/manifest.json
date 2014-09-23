@@ -1,12 +1,12 @@
 {
   "name": "xwalk_echo_app",
   "version": "0.0.0.1",
-  "app": {
-    "launch":{
-      "local_path": "index.html"
+  "start_url": "index.html",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "96x96"
     }
-  },
-  "icons": {
-    "96": "icon.png"
-  }
+  ]
 }
