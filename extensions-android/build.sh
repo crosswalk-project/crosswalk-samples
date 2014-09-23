@@ -32,7 +32,7 @@ XWALK_DIR=$EXTENSION_SRC/lib/`ls lib/ | grep 'crosswalk-'`
 echo
 echo "********* BUILDING ANDROID APK FILES..."
 cd $XWALK_DIR
-python make_apk.py --fullscreen --enable-remote-debugging --manifest=$APP_SRC/manifest.json --extensions=$EXTENSION_SRC/xwalk-echo-extension/
+python make_apk.py --fullscreen --enable-remote-debugging --manifest=$APP_SRC/manifest.json --extensions=$EXTENSION_SRC/xwalk-echo-extension/ --package=org.crosswalkproject.sample
 
 # back to where we started
 cd $PROJECT_DIR
