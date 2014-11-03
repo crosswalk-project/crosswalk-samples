@@ -7,7 +7,7 @@
   <property name="lib" value="lib" />
 
   <!-- Crosswalk Android version -->
-  <property name="crosswalk-version" value="6.35.131.13" />
+  <property name="crosswalk-version" value="8.37.189.14" />
 
   <!-- location of downloaded Crosswalk Android file -->
   <property name="crosswalk-zip" value="${lib}/crosswalk.zip" />
@@ -58,11 +58,14 @@
 
   <!-- compile the extension Java code -->
   <target name="compile" depends="download-deps, download-crosswalk">
+    <first id="app_runtime_java">
+      <fileset dir="${lib}/crosswalk-${crosswalk-version}" includes="**/xwalk_app_runtime_java.jar" />
+    </first>
     <javac srcdir="${src}" destdir="${build}"
            encoding="utf-8" debug="true" verbose="true">
       <classpath>
         <fileset dir="${lib}" includes="*.jar" />
-        <file file="${lib}/crosswalk-${crosswalk-version}/libs/xwalk_app_runtime_java.jar" />
+        <file file="${toString:app_runtime_java}" />
       </classpath>
     </javac>
   </target>
