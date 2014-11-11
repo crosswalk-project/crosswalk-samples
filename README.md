@@ -1,6 +1,6 @@
 # Crosswalk sample applications
 
-See https://crosswalk-project.org/#documentation/samples for details.
+See https://crosswalk-project.org/documentation/samples.html for details.
 
 # License
 
