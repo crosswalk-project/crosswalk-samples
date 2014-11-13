@@ -36,12 +36,3 @@ python make_apk.py --fullscreen --enable-remote-debugging --manifest=$APP_SRC/ma
 
 # back to where we started
 cd $PROJECT_DIR
-
-# show the location of the output apk files
-echo
-echo "********* APK FILES GENERATED:"
-APKS=`ls $XWALK_DIR/xwalk_echo_app*.apk`
-for apk in $APKS ; do
-  echo $apk
-done
-echo
