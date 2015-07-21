@@ -30,6 +30,15 @@ be included in the distribution).
 Android.
 *   Package the application with the extension.
 
+Pre-condition:
+
+  Update crosswalk version in `xwalk-echo-extension-src/build.xml` before run `build.sh`.<br />
+  e.g. change stable 8.37.189.14 to canary 15.44.375.0
+
+0. change `<property name="crosswalk-version" value="8.37.189.14" />` to `<property name="crosswalk-version" value="15.44.375.0" />`
+0. change `<get src="https://download.01.org/crosswalk/releases/crosswalk/android/stable/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />`
+   to `<get src="https://download.01.org/crosswalk/releases/crosswalk/android/canary/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />`
+
 The `build.sh` file will perform these steps for you. It needs to be
 executable, e.g. on Linux:
 

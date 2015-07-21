@@ -1,6 +1,6 @@
 {
   "name": "xwalk_echo_app",
-  "version": "0.0.0.1",
+  "version": "0.0.1",
   "start_url": "index.html",
   "icons": [
     {
