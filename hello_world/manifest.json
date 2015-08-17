@@ -1,5 +1,5 @@
 {
   "name": "HelloWorld",
-  "xwalk_version": "0.0.0.1",
+  "xwalk_version": "0.0.1",
   "start_url": "index.html"
 }
