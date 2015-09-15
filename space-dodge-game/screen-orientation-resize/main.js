@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-  if (screen.lockOrientation) {
-    screen.lockOrientation('landscape');
+  // Make the application fullscreen to lock the screen
+  if (document.documentElement.webkitRequestFullScreen) {
+    document.documentElement.webkitRequestFullScreen();
+  }
+
+  if (screen.orientation.lock) {
+    screen.orientation.lock('landscape');
   }
 
   // DOM elements in main game area
@@ -9,45 +14,42 @@ document.addEventListener('DOMContentLoaded', function () {
   var controlDown = document.querySelector('#control-down');
   var playArea = document.querySelector('#play-area');
 
+  // factor by which to modify canvas width and height
+  var scaleCanvas = 1;
+
+  var fitCanvas = function () {
+    var container = document.querySelector('#play-area-container');
+    var containerWidth = container.offsetWidth;
+    var containerHeight = container.offsetHeight;
+
+    var playAreaWidth = playArea.width;
+    var playAreaHeight = playArea.height;
+
+    var scaleWidth = containerWidth / playAreaWidth;
+    var scaleHeight = containerHeight / playAreaHeight;
+    scaleCanvas = (scaleHeight < scaleWidth) ? scaleHeight : scaleWidth;
+
+    var newPlayAreaWidth = playAreaWidth * scaleCanvas;
+    var newPlayAreaHeight = playAreaHeight * scaleCanvas;
+
+    var left = (containerWidth - newPlayAreaWidth) / 2;
+    var top = (containerHeight - newPlayAreaHeight) / 2;
+
+    // resize and position the canvas
+    playArea.width = parseInt(newPlayAreaWidth, 10);
+    playArea.height = parseInt(newPlayAreaHeight, 10);
+    playArea.style.top = top + 'px';
+    playArea.style.left = left + 'px';
+  };
+
+  window.onresize = fitCanvas;
+  fitCanvas();
+
   // DOM elements in stop screen
   var restart = document.querySelector('#restart');
   restart.addEventListener('click', start);
   var finalScore = document.querySelector('#final-score');
   var stopScreen = document.querySelector('#finish-screen');
-
-  // scale function
-  var scale = function () {
-    var container = document.querySelector('#container');
-    var containerWidth = container.offsetWidth;
-    var containerHeight = container.offsetHeight;
-
-    var viewportWidth = document.documentElement.clientWidth;
-    var viewportHeight = document.documentElement.clientHeight;
-
-    var scaleWidth = viewportWidth / containerWidth;
-    var scaleHeight = viewportHeight / containerHeight;
-    var scaleBoth = (scaleHeight < scaleWidth) ? scaleHeight : scaleWidth;
-
-    var newContainerWidth = containerWidth * scaleBoth;
-    var newContainerHeight = containerHeight * scaleBoth;
-
-    var left = (viewportWidth - newContainerWidth) / 2;
-    left = parseInt(left * (1 / scaleBoth), 10);
-
-    var top = (viewportHeight - newContainerHeight) / 2;
-    top = parseInt(top * (1 / scaleBoth), 10);
-
-    // scale the whole container
-    var transform = 'scale(' + scaleBoth + ',' + scaleBoth + ') ' +
-                    'translate(' + left + 'px, ' + top + 'px)';
-    container.style['-webkit-transform-origin'] = 'top left 0';
-    container.style['-webkit-transform'] = transform;
-    container.style['transform-origin'] = 'top left 0';
-    container.style['transform'] = transform;
-  };
-
-  window.onresize = scale;
-  scale();
 
   // player image (to draw onto canvas)
   var player = new Image();
@@ -163,6 +165,15 @@ document.addEventListener('DOMContentLoaded', function () {
   controlDown.addEventListener('touchend', handleControlOff);
   document.addEventListener('touchmove', handleTouchMove);
 
+  // get dimensions of an Image, taking scaleCanvas into account
+  function getImgWidth(img) {
+    return img.width * scaleCanvas;
+  }
+
+  function getImgHeight(img) {
+    return img.height * scaleCanvas;
+  }
+
   // draw an image to the canvas; this rounds off the x,y coordinates
   // first
   function drawImage(image, x, y, width, height) {
@@ -211,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // add enough asteroids to fill the quota
     for (var i = 1; i <= (asteroidNum - asteroids.length); i++) {
-      var asteroidY = (Math.random() * playArea.height) - asteroid.height;
+      var asteroidY = (Math.random() * playArea.height) - getImgHeight(asteroid);
 
       if (asteroidY < 0) {
         asteroidY = 0;
@@ -240,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     delta = (currentTime - lastTime) / 1000;
 
     // player moves 3 times own height per second
-    moveY = (player.height * delta * 3);
+    moveY = (getImgHeight(player) * delta * 3);
 
     if (controlPressed === 'up') {
       y -= moveY;
@@ -252,8 +263,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (y < 0) {
       y = 0;
     }
-    else if ((y + player.height) >= playArea.height) {
-      y = playArea.height - player.height;
+    else if ((y + getImgHeight(player)) >= playArea.height) {
+      y = playArea.height - getImgHeight(player);
     }
 
     // clear the whole canvas
@@ -264,8 +275,8 @@ document.addEventListener('DOMContentLoaded', function () {
       player,
       x + (Math.random() - 1) * 2,
       y + (Math.random() - 1) * 2,
-      player.width,
-      player.height
+      getImgWidth(player),
+      getImgHeight(player)
     );
 
     // move asteroids and draw them
@@ -279,23 +290,30 @@ document.addEventListener('DOMContentLoaded', function () {
       // below give more realistic collisions for the sprite shapes
       // involved
       if (!hasCollided) {
-        hasCollided = (x + player.width - 10 >= asteroids[i].x) &&
-                      (x <= asteroids[i].x + asteroid.width - 10) &&
-                      (y + player.height - 4 >= asteroids[i].y) &&
-                      (y <= asteroids[i].y + asteroid.height - 4);
+        hasCollided = (x + getImgWidth(player) - 10 >= asteroids[i].x) &&
+                      (x <= asteroids[i].x + getImgWidth(asteroid) - 10) &&
+                      (y + getImgHeight(player) - 4 >= asteroids[i].y) &&
+                      (y <= asteroids[i].y + getImgHeight(asteroid) - 4);
       }
 
       // asteroid has left the screen
-      if (asteroids[i].x < (0 - asteroid.width)) {
+      if (asteroids[i].x < (0 - getImgWidth(asteroid))) {
         asteroids[i].offscreen = true;
         score++;
         needReplenish = true;
       }
       // asteroid needs to be drawn
       else {
-        var newX = asteroids[i].x - (delta * asteroids[i].speed * asteroid.width);
+        var newX = asteroids[i].x
+                   - (delta * asteroids[i].speed * getImgWidth(asteroid));
 
-        drawImage(asteroid, asteroids[i].x, asteroids[i].y, asteroid.width, asteroid.height);
+        drawImage(
+          asteroid,
+          asteroids[i].x,
+          asteroids[i].y,
+          getImgWidth(asteroid),
+          getImgHeight(asteroid)
+        );
 
         asteroids[i].x = newX;
       }
@@ -317,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function start() {
     lastTime = 0;
     x = 30;
-    y = (playArea.height / 2) - (player.height / 2);
+    y = (playArea.height / 2) - (getImgHeight(player) / 2);
     asteroids = [];
     asteroidSpeed = 3;
     asteroidSpeedMax = 4;
