@@ -7,15 +7,15 @@ EXTENSION_SRC=$PROJECT_DIR/xwalk-echo-extension-src
 APP_SRC=$PROJECT_DIR/xwalk-echo-app
 
 # get Ivy
-if [ ! -f $EXTENSION_SRC/tools/ivy-2.4.0-rc1.jar ] ; then
+if [ ! -f $EXTENSION_SRC/tools/ivy-2.4.0.jar ] ; then
   echo
   echo "********* DOWNLOADING IVY..."
   echo
-  wget http://www.mirrorservice.org/sites/ftp.apache.org/ant/ivy/2.4.0-rc1/apache-ivy-2.4.0-rc1-bin.zip
-  mv apache-ivy-2.4.0-rc1-bin.zip $EXTENSION_SRC/tools
+  wget http://www.mirrorservice.org/sites/ftp.apache.org/ant/ivy/2.4.0/apache-ivy-2.4.0-bin.zip
+  mv apache-ivy-2.4.0-bin.zip $EXTENSION_SRC/tools
   cd $EXTENSION_SRC/tools
-  unzip apache-ivy-2.4.0-rc1-bin.zip
-  mv apache-ivy-2.4.0-rc1/ivy-2.4.0-rc1.jar .
+  unzip apache-ivy-2.4.0-bin.zip
+  mv apache-ivy-2.4.0/ivy-2.4.0.jar .
 fi
 
 # build the extension
