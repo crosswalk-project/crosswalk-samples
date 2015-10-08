@@ -1,18 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Make the application fullscreen to lock the screen
-  if (document.documentElement.webkitRequestFullScreen) {
-    document.documentElement.webkitRequestFullScreen();
-  }
 
-  if (screen.orientation.lock) {
-    screen.orientation.lock('landscape');
-  }
+  // DOM elements in start screen
+  var startScreen = document.querySelector('#start-screen');
+  var startbtn = document.querySelector('#start');
+  startbtn.addEventListener('click', requestScreen);
 
   // DOM elements in main game area
+  var gameScreen = document.querySelector('#game-screen');
   var scoreDisplay = document.querySelector('#score-display');
   var controlUp = document.querySelector('#control-up');
   var controlDown = document.querySelector('#control-down');
   var playArea = document.querySelector('#play-area');
+
+  // Make the application fullscreen to lock the screen
+  function requestScreen() {
+    if (document.documentElement.webkitRequestFullScreen) {
+      document.documentElement.webkitRequestFullScreen();
+    }
+    if (screen.orientation.lock) {
+      screen.orientation.lock('landscape');
+    }
+    startScreen.setAttribute('data-visible', 'false');
+    gameScreen.setAttribute('data-visible', 'true');
+    fitCanvas();
+    if (assetsLoaded == 2) {
+      start();
+    }
+  }
 
   // factor by which to modify canvas width and height
   var scaleCanvas = 1;
@@ -42,12 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
     playArea.style.left = left + 'px';
   };
 
-  window.onresize = fitCanvas;
-  fitCanvas();
+  window.onresize = fitCanvas;  
 
   // DOM elements in stop screen
   var restart = document.querySelector('#restart');
+  var exitbtn = document.querySelector('#exit');
   restart.addEventListener('click', start);
+  exitbtn.addEventListener('click', exit);
   var finalScore = document.querySelector('#final-score');
   var stopScreen = document.querySelector('#finish-screen');
 
@@ -360,14 +375,16 @@ document.addEventListener('DOMContentLoaded', function () {
     finalScore.innerHTML = 'Your final score was<br>' + score;
   }
 
+  // exit the game
+  function exit() {
+    window.close();
+  }
+
   // track loading of assets and start game when they're ready
   var assetsLoaded = 0;
 
   function startWhenAssetsLoaded() {
     assetsLoaded++;
-    if (assetsLoaded == 2) {
-      start();
-    }
   }
 
   player.onload = asteroid.onload = startWhenAssetsLoaded;

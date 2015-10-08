@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
     <title>space dodge game</title>
     <link rel="stylesheet" href="base.css">
   </head>
@@ -11,7 +10,11 @@
 
     <div id="container">
 
-      <div id="game-screen">
+      <div id="start-screen" class="vbox">
+        <button id="start">Start</button>
+      </div>
+
+      <div id="game-screen" data-visible="false">
         <div id="controls" class="vbox">
           <p id="score">Score<br><span id="score-display"></span></p>
           <img id="control-up" src="control-up.png">
@@ -26,6 +29,7 @@
       <div id="finish-screen" class="vbox" data-visible="false">
         <p id="final-score"></p>
         <button id="restart">Restart</button>
+        <button id="exit">Exit</button>
       </div>
 
     </div>
