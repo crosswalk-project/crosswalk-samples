@@ -46,26 +46,26 @@ function mandelx1 (c_re, c_im) {
 function mandelx4(c_re4, c_im4) {
   var z_re4  = c_re4;
   var z_im4  = c_im4;
-  var four4  = SIMD.float32x4.splat (4.0);
-  var two4   = SIMD.float32x4.splat (2.0);
-  var count4 = SIMD.int32x4.splat (0);
-  var one4   = SIMD.int32x4.splat (1);
+  var four4  = SIMD.Float32x4.splat (4.0);
+  var two4   = SIMD.Float32x4.splat (2.0);
+  var count4 = SIMD.Int32x4.splat (0);
+  var one4   = SIMD.Int32x4.splat (1);
 
   for (var i = 0; i < max_iterations; ++i) {
-    var z_re24 = SIMD.float32x4.mul (z_re4, z_re4);
-    var z_im24 = SIMD.float32x4.mul (z_im4, z_im4);
+    var z_re24 = SIMD.Float32x4.mul (z_re4, z_re4);
+    var z_im24 = SIMD.Float32x4.mul (z_im4, z_im4);
 
-    var mi4    = SIMD.float32x4.lessThanOrEqual (SIMD.float32x4.add (z_re24, z_im24), four4);
+    var mi4    = SIMD.Float32x4.lessThanOrEqual (SIMD.Float32x4.add (z_re24, z_im24), four4);
     // if all 4 values are greater than 4.0, there's no reason to continue
     if (mi4.signMask === 0x00) {
       break;
     }
 
-    var new_re4 = SIMD.float32x4.sub (z_re24, z_im24);
-    var new_im4 = SIMD.float32x4.mul (SIMD.float32x4.mul (two4, z_re4), z_im4);
-    z_re4       = SIMD.float32x4.add (c_re4, new_re4);
-    z_im4       = SIMD.float32x4.add (c_im4, new_im4);
-    count4      = SIMD.int32x4.add (count4, SIMD.int32x4.and (mi4, one4));
+    var new_re4 = SIMD.Float32x4.sub (z_re24, z_im24);
+    var new_im4 = SIMD.Float32x4.mul (SIMD.Float32x4.mul (two4, z_re4), z_im4);
+    z_re4       = SIMD.Float32x4.add (c_re4, new_re4);
+    z_im4       = SIMD.Float32x4.add (c_im4, new_im4);
+    count4      = SIMD.Int32x4.add (count4, SIMD.Int32x4.and (mi4, one4));
   }
   return count4;
 }
@@ -108,8 +108,8 @@ function drawMandelbrot (params) {
     if (use_simd) {
       var ydx4 = 4*yd;
       for (var y = 0; y < height; y += 4) {
-        var xf4 = SIMD.float32x4(xf, xf, xf, xf);
-        var yf4 = SIMD.float32x4(yf, yf+yd, yf+yd+yd, yf+yd+yd+yd);
+        var xf4 = SIMD.Float32x4(xf, xf, xf, xf);
+        var yf4 = SIMD.Float32x4(yf, yf+yd, yf+yd+yd, yf+yd+yd+yd);
         var m4   = mandelx4 (xf4, yf4);
         mapColorAndSetPixel (x, y,   m4.x);
         mapColorAndSetPixel (x, y+1, m4.y);
