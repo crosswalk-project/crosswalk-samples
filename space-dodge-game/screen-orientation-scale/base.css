@@ -17,7 +17,7 @@ body {
   height: 450px;
 }
 
-#game-screen, #finish-screen {
+#start-screen, #game-screen, #finish-screen {
   position: absolute;
   top: 0;
   left: 0;
@@ -60,7 +60,7 @@ p, button {
   margin: 20% 0;
 }
 
-#finish-screen > * {
+#start-screen, #finish-screen > * {
   text-align: center;
 }
 
