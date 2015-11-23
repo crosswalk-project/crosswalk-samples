@@ -4,13 +4,18 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import org.xwalk.core.XWalkView;
 
 public class MainActivity extends Activity {
+    private XWalkView mXWalkView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mXWalkView = (XWalkView) findViewById(R.id.activity_main);
+        mXWalkView.load("http://crosswalk-project.org/", null);
     }
 
     @Override
