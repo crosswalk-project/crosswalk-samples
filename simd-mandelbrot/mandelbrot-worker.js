@@ -111,10 +111,10 @@ function drawMandelbrot (params) {
         var xf4 = SIMD.Float32x4(xf, xf, xf, xf);
         var yf4 = SIMD.Float32x4(yf, yf+yd, yf+yd+yd, yf+yd+yd+yd);
         var m4   = mandelx4 (xf4, yf4);
-        mapColorAndSetPixel (x, y,   m4.x);
-        mapColorAndSetPixel (x, y+1, m4.y);
-        mapColorAndSetPixel (x, y+2, m4.z);
-        mapColorAndSetPixel (x, y+3, m4.w);
+        mapColorAndSetPixel (x, y,   SIMD.Int32x4.extractLane(m4, 0));
+        mapColorAndSetPixel (x, y+1, SIMD.Int32x4.extractLane(m4, 1));
+        mapColorAndSetPixel (x, y+2, SIMD.Int32x4.extractLane(m4, 2));
+        mapColorAndSetPixel (x, y+3, SIMD.Int32x4.extractLane(m4, 3));
         yf += ydx4;
       }
     }
