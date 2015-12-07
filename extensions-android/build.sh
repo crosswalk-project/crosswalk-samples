@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Need to set Environment variables
+# CROSSWALK_APP_TOOLS_CACHE_DIR=<path>: Keep downloaded files in this dir
+
 # directory containing this script
 PROJECT_DIR=$(cd $(dirname $0) ; pwd)
 
@@ -25,14 +28,12 @@ echo
 cd $EXTENSION_SRC
 ant
 
-# location of Crosswalk Android (downloaded during extension build)
-XWALK_DIR=$EXTENSION_SRC/lib/`ls lib/ | grep 'crosswalk-'`
+# location of latest crosswalk zip 
+XWALK_ZIP=`find $CROSSWALK_APP_TOOLS_CACHE_DIR -name 'crosswalk-*.zip' |sort -r |sed -n '1p'`
 
 # build the apks
 echo
 echo "********* BUILDING ANDROID APK FILES..."
-cd $XWALK_DIR
-python make_apk.py --fullscreen --enable-remote-debugging --manifest=$APP_SRC/manifest.json --extensions=$EXTENSION_SRC/xwalk-echo-extension/ --package=org.crosswalkproject.sample
-
-# back to where we started
 cd $PROJECT_DIR
+$CROSSWALK_APP_TOOLS_CACHE_DIR/crosswalk-app-tools/src/crosswalk-pkg --crosswalk=$XWALK_ZIP --platforms=android --android=$1 --targets=$2 --enable-remote-debugging $APP_SRC
+
