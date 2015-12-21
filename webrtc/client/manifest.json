@@ -2,5 +2,9 @@
   "name": "WebRTC",
   "xwalk_app_version": "0.0.1",
   "start_url": "index.html",
-  "xwalk_package_id": "org.xwalk.webrtc"
+  "xwalk_package_id": "org.xwalk.webrtc",
+  "xwalk_android_permissions": [
+    "CAMERA",
+    "RECORD_AUDIO"
+  ]
 }

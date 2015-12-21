@@ -1151,7 +1151,7 @@ var util = {
 
     var pc, dc;
     try {
-      pc = new RTCPeerConnection(defaultConfig, {optional: [{RtpDataChannels: true}]});
+      pc = new RTCPeerConnection(defaultConfig);
     } catch (e) {
       data = false;
       audioVideo = false;
@@ -1176,7 +1176,7 @@ var util = {
       // Reliable test.
       // Unfortunately Chrome is a bit unreliable about whether or not they
       // support reliable.
-      var reliablePC = new RTCPeerConnection(defaultConfig, {});
+      var reliablePC = new RTCPeerConnection(defaultConfig);
       try {
         var reliableDC = reliablePC.createDataChannel('_PEERJSRELIABLETEST', {});
         sctp = reliableDC.reliable;
@@ -1194,7 +1194,7 @@ var util = {
     // av-only browsers (?).
     if (!onnegotiationneeded && data) {
       // sync default check.
-      var negotiationPC = new RTCPeerConnection(defaultConfig, {optional: [{RtpDataChannels: true}]});
+      var negotiationPC = new RTCPeerConnection(defaultConfig);
       negotiationPC.onnegotiationneeded = function() {
         onnegotiationneeded = true;
         // async check.
