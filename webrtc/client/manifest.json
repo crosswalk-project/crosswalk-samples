@@ -5,6 +5,7 @@
   "xwalk_package_id": "org.xwalk.webrtc",
   "xwalk_android_permissions": [
     "CAMERA",
+    "MODIFY_AUDIO_SETTINGS",
     "RECORD_AUDIO"
   ]
 }
