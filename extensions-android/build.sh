@@ -1,13 +1,28 @@
 #!/bin/bash
 
-# Need to set Environment variables
-# CROSSWALK_APP_TOOLS_CACHE_DIR=<path>: Keep downloaded files in this dir
+# Usage:
+USAGE="./build.sh -v <version> -a <arch> -m <mode>"
 
 # directory containing this script
 PROJECT_DIR=$(cd $(dirname $0) ; pwd)
 
 EXTENSION_SRC=$PROJECT_DIR/xwalk-echo-extension-src
 APP_SRC=$PROJECT_DIR/xwalk-echo-app
+
+XWALK_VERSION="15.44.384.13"
+ARCH="x86"
+MODE="embedded"
+
+while getopts v:a:m opt
+do
+  case "$opt" in 
+  v)  XWALK_VERSION=$OPTARG;;
+  a)  ARCH=$OPTARG;;
+  m)  MODE=$OPTARG;;
+  *)  echo "$USAGE"
+      exit 1;;
+  esac
+done
 
 # get Ivy
 if [ ! -f $EXTENSION_SRC/tools/ivy-2.4.0.jar ] ; then
@@ -28,12 +43,24 @@ echo
 cd $EXTENSION_SRC
 ant
 
-# location of latest crosswalk zip 
-XWALK_ZIP=`find $CROSSWALK_APP_TOOLS_CACHE_DIR -name 'crosswalk-*.zip' |sort -r |sed -n '1p'`
+cp -r $EXTENSION_SRC/xwalk-echo-extension $APP_SRC
+
+# 64bit support
+echo $ARCH |grep "64" > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  XWALK_ZIP="$CROSSWALK_APP_TOOLS_CACHE_DIR/crosswalk-${XWALK_VERSION}-64bit.zip"
+else
+  XWALK_ZIP="$CROSSWALK_APP_TOOLS_CACHE_DIR/crosswalk-${XWALK_VERSION}.zip"
+fi
+
+# check whether downloaded crosswalk android file exist
+if [ -f $XWALK_ZIP ]; then
+  XWALK_VERSION=$XWALK_ZIP
+fi
 
 # build the apks
 echo
 echo "********* BUILDING ANDROID APK FILES..."
 cd $PROJECT_DIR
-$CROSSWALK_APP_TOOLS_CACHE_DIR/crosswalk-app-tools/src/crosswalk-pkg --crosswalk=$XWALK_ZIP --platforms=android --android=$1 --targets=$2 --enable-remote-debugging $APP_SRC
+crosswalk-pkg --crosswalk=$XWALK_VERSION --platforms=android --android=$MODE --targets=$ARCH --enable-remote-debugging $APP_SRC
 

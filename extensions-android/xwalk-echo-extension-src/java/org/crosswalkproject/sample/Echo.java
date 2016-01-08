@@ -3,11 +3,11 @@
  * found in the LICENSE-APACHE-V2 file. */
 package org.crosswalkproject.sample;
 
-import org.xwalk.app.runtime.extension.XWalkExtensionClient;
-import org.xwalk.app.runtime.extension.XWalkExtensionContextClient;
+import org.xwalk.core.extension.XWalkExternalExtension;
+import org.xwalk.core.extension.XWalkExtensionContextClient;
 import com.google.gson.Gson;
 
-public class Echo extends XWalkExtensionClient {
+public class Echo extends XWalkExternalExtension {
   private Gson gson = new Gson();
 
   public Echo(String name, String jsApiContent, XWalkExtensionContextClient xwalkContext) {
