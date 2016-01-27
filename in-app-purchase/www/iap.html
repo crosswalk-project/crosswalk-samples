@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+        <style>
+            input.iapButton {
+                border:1px solid black;
+                height:30px;
+                width:40%;
+                margin: 5px;
+            }
+            input.iapDiv {
+                text-align:center;
+            }
+        </style>
+        <title>Sample of In-app purchase</title>
+    </head>
+
+    <script type='text/javascript'>
+        var noticeApple =  "<div style='color:red'>DO NOT USE REAL APPLE ID TO TEST!!!</div>" +
+                           "<div>Use the following account to run this demo:</div>" +
+                           "<div>User name: iapdemo.tester@gmail.com</div>" +
+                           "<div>Password: Test1234!</div>";
+
+        var noticeGoogle = "<div>Please use your own gmail account.</div>";
+
+        var noticeXiaoMi = "<div>Please use your own XiaoMi ID to purchase and will make a charge.</div>";
+
+        var queryProducts = [];
+
+        function query() {
+            navigator.iap.queryProductsInfo(queryProducts).then(function(products) {
+                document.getElementById("result").innerHTML = "";
+                var buttonStyle = "display:inline-block; padding: 5px 20px; border: 1px solid black";
+                var html = "<ul>";
+                for (var i=0; i<products.length; i++) {
+                  html += "<li>" +
+                          "<h3>" + products[i]["title"] + "</h3>" +
+                          "<p>Description: " + products[i]["description"] + "</p>" +
+                          "<p>Price: " + products[i]["price"] + "</p>" +
+                          "<input " +
+                          "id='" + products[i]["productId"] + "' " +
+                          "value='buy " + products[i]["title"] + "' " +
+                          "onclick=purchase('" +  products[i]["productId"] + "') " +
+                          "type='button'>" +
+                          "</input>" +
+                          "</li>";
+                }
+                html += "</ul>";
+                document.getElementById("result").innerHTML = html;
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = "Operation failed: " + e.name;
+            });
+        }
+
+        function getReceipt() {
+            navigator.iap.getReceipt().then(function(receipt) {
+                document.getElementById("result").innerHTML = "Receipt: " + receipt;
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = "Operation failed: " + e.name;
+            });
+        }
+
+        function validateReceipt() {
+            navigator.iap.validateReceipt().then(function() {
+                document.getElementById("result").innerHTML = "Validation succeeded.";
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = "Validation failed: " + e.name;
+            });
+        }
+
+        function purchase(productId) {
+            navigator.iap.purchase({"productId": productId, "count": 1, "userInfo": "This is a test."}).then(function(result) {
+                document.getElementById("result").innerHTML = "Purchase succeeded.";
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = "Purchase failed: " + e.name;
+            });
+        }
+
+        function restore() {
+            navigator.iap.restore().then(function(products) {
+                var html = "<p>Products restored:</p>";
+                html += "<ul>";
+                for (var i=0; i<products.length; i++) {
+                  html += "<li>" + products[i] + "</li>";
+                }
+                html += "</ul>";
+                document.getElementById("result").innerHTML = html;
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = "Restore failed:" + e.name;
+            });
+        }
+
+        function init(channel) {
+            var html = "<div id='iapDiv'>" +
+                            "<input class='iapButton' type='button' value='Query Products' onclick=query() />" +
+                            "<input class='iapButton' type='button' value='Validate Receipt' onclick=validateReceipt() />" +
+                        "</div>" +
+                        "<div class='iapDiv'>" +
+                            "<input class='iapButton' type='button' value='Get Receipt' onclick=getReceipt() />" +
+                            "<input class='iapButton' type='button' value='Restore' onclick=restore() />";
+
+            if (channel == "XiaoMi") {
+                html += "<input class='iapButton' type='button' value='Purchase com.demo_1' onclick=purchase('com.demo_1') />";
+            }
+            html += "</div>";
+
+            document.getElementById("select").innerHTML = html;
+
+            var notice = "";
+            var options = {};
+
+            options.channel = channel;
+            options.debug = true;
+
+            if (channel == "Google") {
+                options.key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsS5PnwtdKyYPJUe+Jr/mPtjfmIuP+fLcztR3t9ocRs4UfjsyunclopkM324NOoHGrKkkvcT+MDiP1IM2lSfH1Z39W8zMnZOZtlVSyiEitZVt39JL11A00PBn9zpBT0Zb4dm85bENFlw1B+F3K+QyDCjTJzkj/aG51NSEkXsEipyhUikgIp5HxiC63efpuH9G+Go7EThsdkDwn8yngm4KM6trtko+W/wGPYmk/LbZK2WEKpsGBOfJ3lzBf65+p8U1epd0/2Xf5qwz1dT5HiT6I7Wrh1VSRbGABOfDH4fjZVL5BVpoO9O7t9iyaBorPJbPgKXmx1aj0eG5ivNxtpNkUwIDAQAB";
+                notice = noticeGoogle;
+                queryProducts = ["com.crosswalk.apple", "com.crosswalk.grape"];
+            } else if (channel == "XiaoMi") {
+                notice = noticeXiaoMi;
+                options.key = '5691723970138';
+                options.id = '2882303761517239138';
+            } else if (channel == "Apple") {
+                notice = noticeApple;
+                queryProducts = ["org.xwalktest.iap", "org.xwalktest1.iap",
+                                 "org.xwalktest.cherry", "org.xwalktest.grape",
+                                 "org.xwalktest.peach"];
+            }
+
+            document.getElementById("notice").innerHTML = notice;
+            navigator.iap.init(options).then(function() {
+                document.getElementById("result").innerHTML += "Intialization succeeded.";
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML += "Intialization failed: " + e.name;
+            });
+        }
+    </script>
+
+    <body>
+        <h2>Sample of In-app purchase</h2>
+        <div id="select">
+            <p>Select the store which you want to test.</p>
+            <div align="middle">
+                <input class='iapButton' type='button' value='Apple Store' onclick=init("Apple") />
+            </div>
+            <div align="middle">
+                <input class='iapButton' type='button' value='Google Play' onclick=init("Google") />
+            </div>
+            <div align="middle">
+                <input class='iapButton' type='button' value='XiaoMi Store' onclick=init("XiaoMi") />
+            </div>
+        </div>
+        <div id="notice"></div>
+        <div id="result" style="width:100%; height:100px; word-wrap: break-word; word-break: normal;"></div>
+    </body>
+</html>

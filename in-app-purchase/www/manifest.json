@@ -1,0 +1,7 @@
+{
+  "name": "InAppPurchaseDemo",
+  "start_url": "iap.html",
+  "xwalk_package_id": "com.crosswalk.iapsample",
+  "xwalk_app_version": "1.0.0",
+  "xwalk_extensions": ["/path/to/extensions"]
+}

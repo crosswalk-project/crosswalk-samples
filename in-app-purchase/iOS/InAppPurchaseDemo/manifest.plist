@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>start_url</key>
+	<string>iap.html</string>
+	<key>xwalk_extensions</key>
+	<array>
+		<string>navigator.iap</string>
+	</array>
+</dict>
+</plist>
