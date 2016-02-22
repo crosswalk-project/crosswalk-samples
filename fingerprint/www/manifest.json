@@ -1,0 +1,10 @@
+{
+  "name": "FingerprintDemo",
+  "xwalk_app_version": "0.0.1",
+  "start_url": "index.html",
+  "xwalk_package_id": "com.crosswalk.fingerprintsample",
+  "xwalk_extensions": ["/path/to/extensions"],
+  "xwalk_android_permissions": [
+    "USE_FINGERPRINT"
+  ]
+}

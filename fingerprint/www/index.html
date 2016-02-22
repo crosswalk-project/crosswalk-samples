@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+        <style>
+            input.button {
+                border:1px solid black;
+                height:30px;
+                width:80%;
+                margin:5px;
+            }
+        </style>
+        <title>Sample of Fingerprint</title>
+    </head>
+
+    <script type='text/javascript'>
+        function authenticate() {
+            document.getElementById("result").innerHTML = 'Please put your finger on the sensor';
+            xwalk.experimental.fingerprint.authenticate('Require authentication').then(function() {
+                document.getElementById("result").innerHTML = 'Authentication passed!';
+            }).catch(function(e) {
+                document.getElementById("result").innerHTML = 'Authentication failed, error = ' + e.name;
+            });
+        }
+    </script>
+
+    <body>
+        <h2>Sample of Fingerprint</h2>
+        <div align="middle">
+            <input class='button' type='button' value='Authenticate with fingerprint' onclick=authenticate() />
+        </div>
+        <div id="result" style="width:100%; height:100px; word-wrap: break-word; word-break: normal;"></div>
+    </body>
+</html>
