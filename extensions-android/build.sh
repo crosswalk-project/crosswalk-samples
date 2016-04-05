@@ -13,7 +13,7 @@ XWALK_VERSION="15.44.384.13"
 ARCH="x86"
 MODE="embedded"
 
-while getopts v:a:m opt
+while getopts v:a:m: opt
 do
   case "$opt" in 
   v)  XWALK_VERSION=$OPTARG;;
