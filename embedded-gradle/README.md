@@ -3,7 +3,7 @@
 A simple of using Crosswalk runtime library with Android Studio.
 
 The tutorial which uses this code is available at:
-https://crosswalk-project.org/documentation/embedding_crosswalk/crosswalk_aar.html
+https://crosswalk-project.org/documentation/android/embedding_crosswalk/crosswalk_aar.html
 
 ## Code organisation
 
@@ -19,7 +19,7 @@ The Crosswalk Project embedding API enables you to embed the Crosswalk Project r
 in an Android application. You can then load a web page (or whole web application) into
 the embedded runtime, similar to how you might with an Android WebView.
 
-https://crosswalk-project.org/documentation/embedding_crosswalk.html
+https://crosswalk-project.org/documentation/android/embedding_crosswalk.html
 
 ## Crosswalk AAR
 
@@ -28,5 +28,5 @@ includes both x86 and armv7 architectures. A developer no longer needs to downlo
 crosswalk-webview bundle manually but can specify a version code using either the Gradle
 or Maven projects.
 
-https://crosswalk-project.org/documentation/embedding_crosswalk/crosswalk_aar.html
+https://crosswalk-project.org/documentation/android/embedding_crosswalk/crosswalk_aar.html
 
