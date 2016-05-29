@@ -33,9 +33,9 @@ Android.
 Pre-condition:
 
   Update crosswalk version in `xwalk-echo-extension-src/build.xml` before run `build.sh`.<br />
-  e.g. change stable 15.44.384.13 to canary 18.46.452.0
+  e.g. change stable 18.48.477.13 to canary 20.50.533.0
 
-0. change `<property name="crosswalk-version" value="15.44.384.13" />` to `<property name="crosswalk-version" value="18.46.452.0" />`
+0. change `<property name="crosswalk-version" value="18.48.477.13" />` to `<property name="crosswalk-version" value="20.50.533.0" />`
 0. change `<get src="https://download.01.org/crosswalk/releases/crosswalk/android/stable/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />`
    to `<get src="https://download.01.org/crosswalk/releases/crosswalk/android/canary/${crosswalk-version}/crosswalk-${crosswalk-version}.zip" dest="${crosswalk-zip}" />`
 
