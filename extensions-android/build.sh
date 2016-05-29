@@ -9,7 +9,7 @@ PROJECT_DIR=$(cd $(dirname $0) ; pwd)
 EXTENSION_SRC=$PROJECT_DIR/xwalk-echo-extension-src
 APP_SRC=$PROJECT_DIR/xwalk-echo-app
 
-XWALK_VERSION="15.44.384.13"
+XWALK_VERSION="18.48.477.13"
 ARCH="x86"
 MODE="embedded"
 
