@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Li, Hao <haox.li@intel.com>
+
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <title>Viewport</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="support.js"></script>
+  </head>
+  <body onload="run()">
+    <div id="test">
+      <p>1. The width and height of page should be same as the device, and not scale more smaller after set <viewport>with "width=device-width, height=device-height"</p>
+      <div class="contorl"><button id="btn1">Set viewport</button></div>
+      <p>2. The page will be scaled to bigger than the initial page, and not scalable after set <viewport>with "initial-scale=2.0, user-scalable=no"</p>
+      <div class="contorl"><button id="btn2">Set viewport</button></div>
+      <p>3. The page is scalable from 100% to 300% if device support the scale after set <viewport>with "minimum-scale=1.0, maximum-scale=3.0, user-scalable=yes"</p>
+      <div class="contorl"><button id="btn3">Set viewport</button></div>
+    </div>
+  </body>
+</html>
+

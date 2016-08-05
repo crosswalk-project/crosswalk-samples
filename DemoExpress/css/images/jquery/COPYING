@@ -1,0 +1,14 @@
+Copyright (c) 2013 Intel Corporation.
+Except as noted, this software is licensed under BSD-3-Clause License.
+Please, see the LICENSE.BSD-3 file for the BSD-3-Clause License.
+
+Following resources are licensed under its own license.
+
+ajax-loader.gif,
+icons-18-black.png,
+icons-18-white.png,
+icons-36-black.png,
+icons-36-white.png:
+The above files are licensed under the jQuery Mobile
+From https://github.com/jquery/jquery-mobile/tree/1.2-stable/css/themes/default/images
+Please see https://jquery.org/license/ [MIT license]

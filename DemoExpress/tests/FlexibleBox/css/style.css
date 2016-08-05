@@ -1,0 +1,149 @@
+/*
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Wang, Hongjuan <hongjuanx.wang@intel.com>
+
+*/
+
+#testDiv {
+  border: 1px solid #000;
+  height: 150px;
+  margin: 15px auto;
+  padding: 30px 0px;
+  width: 280px;
+}
+
+.div1 {
+  background-color: green;
+  width: 140px;
+}
+
+.div2 {
+  background-color: blue;
+  width: 70px;
+}
+
+.container {
+  color: white;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row;
+  margin: 0px auto;
+  -webkit-flex-flow: row;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+}
+.item {
+  background: green;
+  /* make sure UA that doesn't support writing mode and flexbox fails. */
+  float: right;
+  height: 3em;
+  width: 3em;
+}
+.error {
+  background: red;
+  height: 9em;
+  position: absolute;
+  width: 3em;
+  z-index: -1;
+}
+
+/* Test specific Styles */
+
+.flex-wrapper {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+	-webkit-flex-direction: row;
+	-webkit-flex-wrap: wrap;
+}
+
+/* Test-series styles */
+
+.flex-wrapper {
+	/* should only display on error */
+	background: red;
+	/* Enforce writing mode */
+	direction: ltr;
+	height: 120px;
+	-webkit-writing-mode: horizontal-tb;
+	width:  120px;
+	writing-mode: horizontal-tb;
+}
+
+.flex-wrapper div {
+	background: green;
+	border: 1px solid limegreen;
+	color: white;
+	height: 38px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	width: 38px;
+}
+
+.flex-wrapper1 {
+	background: green;
+	border-right: 60px solid red;
+	display: flex;
+	display: -webkit-flex;
+	height: 120px;
+	margin: auto;
+	flex-wrap: nowrap;
+	-webkit-flex-wrap: nowrap;
+	width:  60px;
+}
+
+.flex-wrapper1 div{
+	flex: none;
+	width:  60px;
+	-webkit-flex: none;
+}
+
+.green {
+	background: green;
+}
+
+#test {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+
+#first {
+  order: 3;
+}
+
+#second {
+  order: 2;
+}
+
+#third {
+  order: 1;
+}

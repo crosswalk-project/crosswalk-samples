@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Cui, Jieqiong <jieqiongx.cui@intel.com>
+
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/jquery/jquery.mobile.js"></script>
+    <script src="../../js/tests.js"></script>
+    <style>
+        /* Test Display Box */
+        .display_box {
+            width: 100%;
+            border: 1px solid #000;
+        }
+    </style>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role= "content">
+      <h4>This sample demonstrates An XML markup language for 2D vector graphics.</h4>
+      <p>The blue object 1)moves from the start position to the end position, 2)transfer continuously to ellipse, 3)rotate spirally in anticlockwise.</p>
+      <svg width="330" height="400" class="display_box">
+        <circle cx="100" cy="50" r="20" fill="blue">
+          <animateTransform attributeName='transform' attributeType='XML' type='rotate' from='180 170 200' to='-360 100 50' dur='10s' additive='sum' fill='freeze' repeatCount='indefinite'/>
+          <animateTransform attributeName='transform' attributeType='XML' type='scale' from='1' to='2' dur='10s' additive='sum' fill='freeze' repeatCount='indefinite'/>
+          <animateTransform attributeName='transform' attributeType='XML' type='skewX' by="30" dur='10s' additive='sum' fill='freeze' repeatCount='indefinite'/>
+        </circle>
+        <g fill="red" stroke="none" >
+          <rect x="240" y="340" width="6" height="6" />
+          <rect x="260" y="100" width="6" height="6" />
+        </g>
+        <g font-size="14" font-family="Verdana" >
+          <text x="250" y="347">start position</text>
+          <text x="270" y="107">end position</text>
+        </g>
+      </svg>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+    </div>
+    <div data-role="popup" id="popup_info">
+      <font class="fontSize">
+        <p>This sample is designed by svg and animateTransform element.</p>
+      </font>
+    </div>
+  </body>
+</html>

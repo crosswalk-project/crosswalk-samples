@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://tizen.org/test/ViewportTest" version="2.2.1" viewmodes="">
+  <icon src="icon.png" height="117" width="117"/>
+  <name>ViewportTest</name>
+  <tizen:application id="viewport00.ViewportTest" package="viewport00" required_version="2.2"/>
+  <tizen:setting screen-orientation="landscape"/>
+</widget>

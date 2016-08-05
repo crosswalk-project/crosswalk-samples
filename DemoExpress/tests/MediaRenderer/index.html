@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2014 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Liu, yun <yun.liu@archermind.com>
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/jquery/jquery.mobile.js"></script>
+    <script src="../../js/tests.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        #rendererContainer {
+           width: 98%;
+           height: 450px;
+           overflow: auto;
+           border: 1px solid;
+           margin: 0px auto;
+        }
+    </style>
+  </head>
+  <body>
+    <div data-role="header">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role="content">
+      <h4>This sample demostrates the MediaRenderer with multi operations below.</h4>
+      <p>Make sure a dlna mediaserver is established.<p/>
+      <div id='rendererContainer'>
+      </div>
+      <div id="contentbutton">
+        <a id="scanbutton" data-role="button">Scan for media renderers</a>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    </div>
+    <div data-role="popup" id="popup_info">
+      <font class="fontSize">
+        <ol>
+          <li>'Scan for media renderers' button, to scan for media renderers</li>
+          <li>Wait for scaning media renderers successfully</li>
+          <li>'Open' button, to open a media on the renderer</li>
+          <li>'Prefetch' button, to preload a media on the renderer</li>
+          <li>'Cancel' button, to cancel all requests has outstanding on the renderer</li>
+          <li>'Play' button, to play the renderer's current media</li>
+          <li>'Pause' button, to pause the media renderer</li>
+          <li>'Stop' button, to stop the media renderer</li>
+          <li>'Next' button, to play the next track of the renderer's playlist</li>
+          <li>'Previous' button, to play the previous track of the renderer's playlist</li>
+          <li>'Mute' button, to mute the media renderer</li>
+          <li>'setSpeed' button, to set the media renderer's play speed</li>
+          <li>'setVolume' button, to set the media renderer audio volume</li>
+          <li>'gotoTrack' button, to open the specified track number of the renderer's playlist</li>
+        </ol>
+      </font>
+    </div>
+  </body>
+</html>

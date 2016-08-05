@@ -1,0 +1,25 @@
+The slider.tooltip.js comes from
+https://github.com/jquery/jquery-mobile/tree/1.3-stable
+with some modifications.
+
+-  define( [ "jquery", "./slider" ], function( $ ) {
++  //define( [ "jquery", "./slider" ], function( $ ) {
+
+        if (o.popupEnabled) {
+             this._positionPopup();
+-            this._popup.html(Math.round(newValue));
++            this._popup.html(Math.round(newValue*100)+"%" );
++            document.getElementById("MediaPlayback").volume = newValue;
+         }
+         if (o.showValue) {
+-            this._handleText.html(Math.round(newValue));
++            this._handleText.html(Math.round(newValue*100)+"%");
++            document.getElementById("MediaPlayback").volume = newValue;
+         }
+
+jQuery Mobile v@VERSION
+http://jquerymobile.com
+
+Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
+Released under the MIT license.
+http://jquery.org/license

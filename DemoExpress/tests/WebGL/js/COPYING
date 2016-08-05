@@ -1,0 +1,94 @@
+The SpinningBox.js comes from
+https://github.com/KhronosGroup/WebGL
+with some modifications.
+
++    var incAngle = 0;
++    var currentAngle = 0;
++    var bakAngle = 0;
++    var viewDistance = 18;
++    var requestId;
++    var canvas;
+
+     function reshape(gl)
+     {
+-        var canvas = document.getElementById('example');
++        var canvas = document.getElementById('canvas');
+-        var windowWidth = window.innerWidth - 20;
+-        var windowHeight = window.innerHeight - 40;
+-        if (windowWidth == width && windowHeight == height)
+-            return;
+
+-        width = windowWidth;
+-        height = windowHeight;
+-        canvas.width = width;
+-        canvas.height = height;
+
+-        gl.viewport(0, 0, width, height);
++        gl.viewport(0, 0, canvas.width, canvas.height);
+         g.perspectiveMatrix = new J3DIMatrix4();
+-        g.perspectiveMatrix.perspective(30, width/height, 1, 10000);
++        g.perspectiveMatrix.perspective(30, canvas.width/canvas.height, 1, 10000);
+-        g.perspectiveMatrix.lookat(0, 0, 7, 0, 0, 0, 0, 1, 0);
++        g.perspectiveMatrix.lookat(0, 0, viewDistance, 0, 0, 0, 0, 1, 0);
+
+These tests are copyright by the Khronos Group under MIT License:
+https://www.khronos.org/registry/webgl/sdk/tests/test-guidelines.md
+
+
+The jquery extension code of main.js(line 251~376) comes from
+https://github.com/jquery/jquery-mobile/tree/1.3-stable
+with some modifications.
+
+         this._currentValue = newValue;
++        var ID = this.element[0].id;
++        if (ID == "slider-1") {
++            var value = 7 + 23*(4 - (parseInt(newValue, 10) - 1))/5;
++            setSize(value);
++            if (parseInt(newValue, 10) != 3) {
++                testFlag.size = true;
++                checkEnable();
++            }
++        } else if (ID == "speed-1") {
++            setSpeed(parseInt(newValue, 10));
++            if (parseInt(newValue, 10) != 5) {
++                testFlag.speed = true;
++                checkEnable();
++            }
++        } else if (ID == "flip-1") {
++            if (newValue == "0") {
++                stop();
++                $("input[type='radio']").checkboxradio('disable');
++                $("#slider-1").slider('disable');
++                $("#speed-1").slider('disable');
++                testFlag.status = true;
++                checkEnable();
++            } else if (newValue == "1"){
++                if (!isInit) {
++                    reStart();
++                    $("input[type='radio']").checkboxradio('enable');
++                    $("#slider-1").slider('enable');
++                    $("#speed-1").slider('enable');
++                } else {
++                    isInit = false;
++                }
++            }
++        }
+
+        if ( o.popupEnabled ) {
+            this._positionPopup();
+-           this._popup.html( newValue );
++           this._popup.html( Math.round(newValue) );
+        }
+
+        if ( o.showValue ) {
+-           this._handleText.html( newValue );
++           this._handleText.html( Math.round(newValue) );
+        }
+
+jQuery Mobile v@VERSION
+http://jquerymobile.com
+
+Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
+Released under the MIT license.
+http://jquery.org/license
+

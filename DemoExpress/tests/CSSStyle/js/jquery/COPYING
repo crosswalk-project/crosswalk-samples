@@ -1,0 +1,42 @@
+The slider.tooltip.js comes from
+https://github.com/jquery/jquery-mobile/tree/1.3-stable
+with some modifications.
+
+-  define( [ "jquery", "./slider" ], function( $ ) {
++  //define( [ "jquery", "./slider" ], function( $ ) {
+
+         this._currentValue = newValue;
++        var ID = this.element[0].id;
++        if (ID == "slider-1") {
++            if ( o.showValue ) {
++                this._handleText.html(Math.round(newValue*100)+"%");
++                $("#p").css("opacity", newValue);
++                if(newValue != 1){
++                    testFlag.Transparency = true;
++                    status();
++                }
++            }
++        }else if(ID == "slider-2"){
++            if ( o.showValue ) {
++                this._handleText.html(Math.round(newValue));
++                $("#text-div").css("outline-offset", newValue);
++                if(newValue != 5){
++                    testFlag.Outline = true;
++                    status();
++                }
++            }
++        }
+-        if (o.popupEnabled) {
+-            this._positionPopup();
+-            this._popup.html(Math.round(newValue));
+-        }
+-        if (o.showValue) {
+-            this._handleText.html(Math.round(newValue));
+-        }
+
+jQuery Mobile v@VERSION
+http://jquerymobile.com
+
+Copyright 2010, 2013 jQuery Foundation, Inc. and other contributors
+Released under the MIT license.
+http://jquery.org/license

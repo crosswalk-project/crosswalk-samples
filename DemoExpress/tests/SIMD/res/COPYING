@@ -1,0 +1,10 @@
+Copyright (c) 2014 Intel Corporation.
+Except as noted, this software is licensed under BSD-3-Clause License.
+Please, see the LICENSE.BSD-3 file for the BSD-3-Clause License.
+
+Following resources are licensed under its own license.
+
+mandelbrot.css
+mandelbrot.html
+mandelbrot.js
+The above files are from https://github.com/PeterJensen/mandelbrot/tree/master/js and licensed under Intel BSD-3-Clause License.

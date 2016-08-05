@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Samsung Electronics Co., Ltd.
+
+Licensed under the Apache License, Version 2.0 (the License);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Authors:
+        Ma, Yue <yuex.ma@intel.com>
+        Zhang, Jing <jingx.zhang@intel.com>
+
+-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+  <script src="../../js/jquery/jquery.js"></script>
+  <script src="../../js/jquery/jquery.mobile.js"></script>
+  <script src="../../js/tests.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+    <div data-role="page" id="main">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <h1 id="main_page_title"></h1>
+        </div>
+        <div data-role="content">
+            <h4>This sample demonstrates the device is able to handle pageVisible event when lock and unlock the screen by gesture.</h4>
+            <div data-role="collapsible-set" data-inset="false" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-theme="b">
+                <p>1.Press power key to lock the screen, then press power key again to unlock the screen.</p>
+                <p>2.Click "Screen-lock State" to check if the visibilitystate attribute is set to hidden and the hidden attribute is set to true when lock the screen.</p>
+                <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                    <h3 id="homeList1">Screen-lock State</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li class="ui-li ui-li-static" id="lock"></li>
+                    </ul>
+                </div>
+                <p>Click "Screen-unlock State" to check if the visibilitystate attribute is set to visible and the hidden attribute is set to false when unlock the screen.</p>
+                <div data-role="collapsible" data-collapsed="true" data-theme="b">
+                    <h3 id="homeList2">Screen-unlock State</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li class="ui-li ui-li-static" id="unlock"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        </div>
+        <div data-role="popup" id="popup_info" data-theme="a">
+          <font class="fontSize">
+            <p>The Page Visibility features: visibilityState, hidden attribute.</p>
+          </font>
+        </div>
+    </div>
+</body>
+</html>

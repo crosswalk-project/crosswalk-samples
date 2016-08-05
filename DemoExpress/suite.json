@@ -1,0 +1,117 @@
+{
+    "pkg-blacklist": [
+        "config.xml",
+        "pack.py",
+        "tests.*.xml",
+        "icon.png",
+        "manifest.json",
+        "suite.json",
+        "inst.*"
+    ],
+    "pkg-list": {
+        "apk,cordova": {
+            "blacklist": [
+                "*"
+            ],
+            "copylist": {
+                "inst.apk.py": "inst.py"
+            },
+            "subapp-list": {
+                ".": {
+                    "app-name": "demoexpress",
+                    "blacklist": [
+                        "*"
+                    ],
+                    "copylist": {
+                        "config.xml": "config.xml",
+                        "css": "css",
+                        "icon.png": "icon.png",
+                        "index.html": "index.html",
+                        "js": "js",
+                        "res": "res",
+                        "tests": "tests",
+                        "tests.android.xml": "tests.xml"
+                    },
+                    "install-path": "."
+                }
+            }
+        },
+        "wgt": {
+            "blacklist": [
+                "*"
+            ],
+            "copylist": {
+                "LICENSE.BSD-3": "LICENSE.BSD-3",
+                "inst.wgt.py": "inst.py",
+                "res/css": "res/css",
+                "res/font": "res/font",
+                "res/images": "res/images"
+            },
+            "subapp-list": {
+                ".": {
+                    "app-name": "demoexpress",
+                    "blacklist": [
+                        "*"
+                    ],
+                    "copylist": {
+                        "config.xml": "config.xml",
+                        "css": "css",
+                        "icon.png": "icon.png",
+                        "index.html": "index.html",
+                        "js": "js",
+                        "res": "res",
+                        "tests": "tests",
+                        "tests.tizen.xml": "tests.xml"
+                    },
+                    "install-path": ".",
+                    "sign-flag": "true"
+                },
+                "tests/Viewport/ViewportTest": {
+                    "app-name": "ViewportTest",
+                    "blacklist": [],
+                    "install-path": ".",
+                    "sign-flag": "true"
+                }
+            }
+        },
+        "xpk": {
+            "blacklist": [
+                "*"
+            ],
+            "copylist": {
+                "LICENSE.BSD-3": "LICENSE.BSD-3",
+                "inst.xpk.py": "inst.py",
+                "res/css": "res/css",
+                "res/font": "res/font",
+                "res/images": "res/images"
+            },
+            "subapp-list": {
+                ".": {
+                    "app-name": "demoexpress",
+                    "blacklist": [
+                        "*"
+                    ],
+                    "copylist": {
+                        "config.xml": "config.xml",
+                        "css": "css",
+                        "icon.png": "icon.png",
+                        "index.html": "index.html",
+                        "js": "js",
+                        "manifest.json": "manifest.json",
+                        "res": "res",
+                        "tests": "tests",
+                        "tests.tizen.xml": "tests.xml"
+                    },
+                    "install-path": ".",
+                    "sign-flag": "true"
+                },
+                "tests/Viewport/ViewportTest": {
+                    "app-name": "ViewportTest",
+                    "blacklist": [],
+                    "install-path": "."
+                }
+            }
+        }
+    },
+    "pkg-name": "DemoExpress"
+}

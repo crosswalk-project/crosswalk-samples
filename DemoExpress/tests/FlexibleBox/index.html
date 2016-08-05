@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Wang, Hongjuan <hongjuanx.wang@intel.com>
+
+-->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <script src="../../js/jquery/jquery.js"></script>
+    <script src="../../js/jquery/jquery.mobile.js"></script>
+    <script src="../../js/tests.js"></script>
+    <script src="../../js/main.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="main">
+    <div data-role="header">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div data-role="content">
+      <h4>This sample demonstrates A CSS box model for user interface design.</h4>
+      <hr />
+      <p>There is no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/display-flex.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>This is a 3x3 grid of green squares, numbered 1-9 left-to-right and top-to-bottom, and there is no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/flex-direction-row.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>There is a green square and no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/flex-wrap-nowrap.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>There is a tall green box with pairs of the 1-9 and a-i listed top to bottom in two columns in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/flex-flow-row.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>There is no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/align-items-stretch.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>There is no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/align-content-stretch.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>There is a single blue rectangle on the left, a single orange rectangle directly to its right, and no red visible in below rectangle box.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/justify-content-flex-start.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+      <p>The paragraph below reads 'First, Second, Third' from top.</p>
+      <iframe marginWidth=0 marginHeight=0 src="tests/order-with-column-reverse.html" frameBorder=0 scrolling=no height=250></iframe>
+      <hr />
+
+      <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+      </div>
+      <div data-role="popup" id="popup_info" data-theme="a">
+        <font class="fontSize">
+          <p>The flexible box features: display-flex, flex-direction-row, flex-wrap-nowrap, flex-flow-row, align-items-stretch, align-content-stretch, justify-content-flex-start, order-with-column-reverse display one by one.</p>
+        </font>
+      </div>
+    </div>
+    <div data-role="page" id="test_ui">
+      <iframe id="test_frame" width="100%" frameborder="no" border="0" src=""></iframe>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test_definition>
+  <suite name="DemoExpress">
+    <set name="Runtime &amp;amp; Packaging">
+      <testcase component="sample" execution_type="manual" id="AppURI" purpose="App URI">
+      </testcase>
+    </set>
+    <set name="Multimedia &amp;amp; Graphics">
+      <testcase component="sample" execution_type="manual" id="AnimationTransform" purpose="Animation Transform">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="AudioPlay" purpose="Audio Play">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Canvas" purpose="Canvas">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="CSSAnimation" purpose="CSS Animation">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="CSSStyle" purpose="CSS Style">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="CSSStyleAttribute" purpose="CSS Style Attribute">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="FlexibleBox" purpose="Flexible Box">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="MediaQueries" purpose="Media Queries">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="SVGTransformation" purpose="SVG Transformation">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Transitions" purpose="Transitions">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="VideoPlayTizen" purpose="Video Play">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebRTC" purpose="WebRTC">
+      </testcase>
+    </set>
+    <set name="Networking &amp;amp; Storage">
+      <testcase component="sample" execution_type="manual" id="FileReader" purpose="FileReader">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="IndexedDB" purpose="IndexedDB">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="SessionHistory" purpose="Session History">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebDatabase" purpose="Web Database">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebMessaging" purpose="Web Messaging">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebSpeech" purpose="Web Speech">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebStorage" purpose="Web Storage">
+      </testcase>
+    </set>
+    <set name="Performance &amp;amp; Optimization">
+      <testcase component="sample" execution_type="manual" id="AnimationTiming" purpose="Animation Timing">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="HrtimeTizen" purpose="High Resolution Time">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="NavigationTiming" purpose="Navigation Timing">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="PerformanceTimeline" purpose="Performance Timeline">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="ResourceTiming" purpose="Resource Timing">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Selectors" purpose="Selectors">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="TypedArray" purpose="Typed Array">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Usertiming" purpose="User Timing">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Viewport" purpose="Viewport">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Workers" purpose="Workers">
+      </testcase>
+    </set>
+    <set name="Device &amp;amp; Hardware">
+      <testcase component="sample" execution_type="manual" id="Accelerometer" purpose="Accelerometer">
+        <capability name="accelerometer"/>
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="BrowserState" purpose="Browser State">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="CameraViaUserMedia" purpose="Camera via UserMedia">
+        <capability name="cameraFront"/>
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Forms" purpose="Forms">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="FullScreen" purpose="Full Screen">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="HTMLTemplate" purpose="HTML Template">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Input" purpose="Input">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Notifications" purpose="Notifications">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="ScreenOrientation" purpose="Screen Orientation">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="ShadowDom" purpose="ShadowDom">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="Touch" purpose="Touch">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebAudio" purpose="WebAudio">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="WebGL" purpose="WebGL">
+      </testcase>
+    </set>
+    <set name="Social">
+      <testcase component="sample" execution_type="manual" id="ContactsManager" purpose="Contacts Manager">
+      </testcase>
+    </set>
+    <set name="Experimental API">
+      <testcase component="sample" execution_type="manual" id="DeviceCapabilities" purpose="Device Capabilities">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="SIMD" purpose="SIMD">
+      </testcase>
+    </set>
+    <set name="Security">
+      <testcase component="sample" execution_type="manual" id="Sandbox" purpose="Sandbox">
+      </testcase>
+    </set>
+    <set name="UI">
+      <testcase component="sample" execution_type="manual" id="Clipboard" purpose="Clipboard">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="DragandDrop" purpose="Drag and Drop">
+      </testcase>
+    </set>
+    <set name="Others">
+      <testcase component="sample" execution_type="manual" id="MediaRenderer" purpose="Media Renderer">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="MediaServer" purpose="Media Server">
+      </testcase>
+      <testcase component="sample" execution_type="manual" id="NFC" purpose="NFC">
+      </testcase>
+    </set>
+  </suite>
+</test_definition>

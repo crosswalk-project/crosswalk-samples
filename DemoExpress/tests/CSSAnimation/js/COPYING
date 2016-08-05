@@ -1,0 +1,6 @@
+The code of main.js comes from
+http://svn.webkit.org/repository/webkit/trunk/LayoutTests/transitions/resources/transition-test-helpers.js
+without modification.
+
+These resources are under BSD Two Clause License:
+http://trac.webkit.org/browser/trunk/Source/WebKit/LICENSE

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Wang, Jing J <jing.j.wang@intel.com>
+        Lin, Wanming <wanmingx.lin@intel.com>
+        Fan, Yugang <yugang.fan@intel.com>
+        Jiazhen, Shentu <jiazhenx.shentu@intel.com>
+
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/jquery/jquery.js"></script>
+    <script src="js/jquery/jquery.mobile.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div data-role="page" id="home_ui">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <h1 style="width:75%; margin-left:auto; margin-right:auto;">DemoExpress</h1>
+        <a id="version" class="ui-btn-right"></a>
+    </div>
+    <div id="app_selector" data-role="content">
+        <ul data-role="listview" id="mylist" data-mini="true" data-inset="true"></ul>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false" align="center">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#popup_info" data-icon="info" data-role="button" data-rel="popup" data-transition="pop">Help</a>
+            <a href="#popup_exit" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop" data-icon="back">Exit</a>
+        </div>
+    </div>
+    <div data-role="popup" id="popup_info" data-theme="a">
+      <font class="ui-title">
+        <br>
+        <p>&nbsp;&nbsp;This sample demonstrates the basic usage of standard APIs that are supported by Crosswalk.&nbsp;&nbsp;</p>
+        <p>&nbsp;&nbsp;Please refer to the API spec details to <a href="https://crosswalk-project.org/#documentation/apis/web_apis">https://crosswalk-project.org/#documentation/apis/web_apis</a>&nbsp;&nbsp;</p>
+        <br>
+      </font>
+    </div>
+    <div data-role="popup" id="popup_exit" data-overlay-theme="a" data-theme="c">
+        <div data-role="header" data-theme="a" class="ui-corner-top">
+            <h1>Reminder</h1>
+        </div>
+        <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+            <h3 class="ui-title">Do you want to exit now?</h3>
+            <a id="exit" data-role="button" data-rel="back" data-theme="c">Yes</button>
+            <a data-role="button" data-rel="back" data-theme="e">No, thanks</a>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="test_ui">
+    <iframe id="test_frame" width="100%" frameborder="no" border="0" src="" allowfullscreen="true"></iframe>
+</div>
+</body>
+</html>

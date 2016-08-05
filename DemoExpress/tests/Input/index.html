@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+Copyright (c) 2013 Intel Corporation.
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+* Redistributions of works must retain the original copyright notice, this list
+  of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+* Neither the name of Intel Corporation nor the names of its contributors
+  may be used to endorse or promote products derived from this work without
+  specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY INTEL CORPORATION "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL INTEL CORPORATION BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Authors:
+        Wang, Hongjuan <hongjuanx.wang@intel.com>
+
+-->
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width" />
+  <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+  <script src="../../js/jquery/jquery.js"></script>
+  <script src="../../js/jquery/jquery.mobile.js"></script>
+  <script src="../../js/tests.js"></script>
+  <script src="../../js/main.js"></script>
+</head>
+<body>
+  <div data-role="page" id="main">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+      <h1 id="main_page_title"></h1>
+    </div>
+    <div id="content" data-role="content">
+      <h4>This sample demonstrates picker controls for telephone, email and URL input types.</h4>
+      <p>Type "h" in the input box to see a selection list displayed.</p>
+      <input type="hidden" value="input_type_url"/>
+      <div class="testIn">
+        <input type="url" name="location" list="urls">
+        <datalist id="urls">
+          <option label="MIME: Format of Internet Message Bodies" value="http://tools.ietf.org/html/rfc2045">
+          <option label="HTML 4.01 Specification" value="http://www.w3.org/TR/html4/">
+          <option label="Form Controls" value="http://www.w3.org/TR/xforms/slice8.html#ui-commonelems-hint">
+          <option label="Scalable Vector Graphics (SVG) 1.1 Specification" value="http://www.w3.org/TR/SVG/">
+          <option label="Feature Sets - SVG 1.1 - 20030114" value="http://www.w3.org/TR/SVG/feature.html">
+          <option label="The Single UNIX Specification, Version 3" value="http://www.unix-systems.org/version3/">
+        </datalist>
+      </div>
+      <hr/>
+      <p>1. Type "a", choose the first value in the selection list, one email address begin with 'a' letter displayed in the input box</p>
+      <p>2. Then type ",a", choose the second value in the selection list, two email addresses begin with 'a' letter displayed in the input box.</p>
+      <input type="hidden" value="input_type_email"/>
+      <div class="testIn">
+        <input type="email" multiple list="contacts"/>
+        <datalist id="contacts">
+          <option value="hedral@damowmow.com">
+          <option value="pillar@example.com">
+          <option value="astrophy@cute.example">
+          <option value="astronomy@science.example.org">
+        </datalist>
+      </div>
+      <hr/>
+      <p>The value of the input text should be "012".</p>
+      <input type="hidden" value="input_type_tel"/>
+      <div class="testIn">
+        <input type="telephone" value="0&#x000A;1&#x000D;2"/>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+    </div>
+    <div data-role="popup" id="popup_info" data-theme="a">
+      <font class="fontSize">
+        <p>This sample is designed by HTMLInputElement type attribute.</p>
+      </font>
+    </div>
+  </div>
+</body>
+</html>

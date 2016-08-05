@@ -1,0 +1,128 @@
+.gpTableCell {
+    border: solid 2px gray;
+    border-radius: 6px;
+}
+
+.gpTableCellUnConnected {
+    border-color: lightgray;
+    color: gray;
+}
+
+.gpNotConnectedText {
+    font-size: 26pt;
+    text-align: center;
+}
+
+#gamepadStateTable, #gamepadStateTable th {
+    border-collapse: collapse;
+}
+
+#gamepadStateTable th {
+    font-weight: bold;
+    text-align:left;
+}
+
+#gamepadStateTable td, #gamepadStateTable th {
+    border: solid 1px #0094FF;
+    padding: 1px 5px 1px 5px;
+}
+
+.AxisVisualizer {
+    width: 108px;
+    height: 108px;
+    background-image: url(images/crosshair_ball3.png), url(images/grid.png);
+    background-position: 10px 10px, 4px 4px;
+    background-repeat: no-repeat;
+}
+
+.AnalogButtonVisualizer {
+    width: 30px;
+    height: 100px;
+    background-image: url(images/trigger_meter_fill.png), url(images/trigger_meter.png);
+    background-repeat: no-repeat;
+    font-weight: bold;
+    text-align: center;
+}
+
+.VisualizerGeneric {
+    float: left;
+    margin: 5px;
+}
+
+.AnalogButtonVisualizer #val {
+    font-size: 9pt;
+    font-weight: normal;
+}
+
+.oval {
+    border: solid 1px #0094FF;
+    border-radius: 3px 3px;
+    background-clip: border-box;
+    font-weight: bold;
+    text-align: center;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border: solid 1px #0094FF;
+    border-radius: 100%;
+    background-clip: border-box;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
+
+.DPad {
+    position: relative;
+    left: 10px;
+    width: 65px;
+    height: 64px;
+    background-image: url(images/dpad.png);
+}
+
+.btnDU, .btnDL, .btnDR, .btnDD {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.btnDU {
+    left: 23px;
+    top: 1px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+.btnDL {
+    left: 1px;
+    top: 22px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.btnDR {
+    left: 44px;
+    top: 23px;
+    border-radius: 0px 3px 3px 0px;
+}
+
+.btnDD {
+    left: 23px;
+    top: 43px;
+    border-radius: 0px 0px 3px 3px;
+}
+
+.selOrStart {
+    width: 45px;
+}
+
+.bumper {
+    width: 80px;
+}
+
+#gamepadSupportedDiv {
+    font-size: 4em;
+}
+
+#buttonNeverPressedDiv {
+    font-size: 3em;
+}
